@@ -1,0 +1,15 @@
+.tag_vertical {
+	overflow: hidden;
+	position: relative;
+	.showbox, .menu {
+		position: absolute;
+	}
+	.showbox {
+		a {
+			display: block;
+		}
+	}
+	.menu {
+		top: 0;
+	}
+}

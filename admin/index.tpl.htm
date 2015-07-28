@@ -1,0 +1,129 @@
+<{extends file="./layout.tpl.htm"}>
+<{block name="content"}>
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header">管理台首頁</h3>
+			<p>HI! <{$smarty.session.login_user_info->data.name}> ( <{$smarty.session.login_user_info->data.account}> ), 歡迎回來! </p>
+		</div>
+		<!-- /.col-lg-12 -->
+		<ul class="cf">
+			<li class="col-lg-3">
+				<div class="dashboard-stat color1">
+					<div class="datashow cf">
+						<div class="icon left">
+							<i class="fa fa-newspaper-o"></i>
+						</div>
+						<div class="details right">
+							<div class="number"><{$news_count}></div>
+							<div class="desc">市場消息</div>
+						</div>
+					</div>
+					<a href="/admin/news/" class="more cf">更多<i class="fa fa-arrow-circle-o-right right"></i></a>
+				</div>
+			</li>
+			<li class="col-lg-3">
+				<div class="dashboard-stat color2">
+					<div class="datashow cf">
+						<div class="icon left">
+							<i class="fa fa-users"></i>
+						</div>
+						<div class="details right">
+							<div class="number"><{$team_count}></div>
+							<div class="desc">康和菁英</div>
+						</div>
+					</div>
+					<a href="/admin/team/" class="more cf">更多<i class="fa fa-arrow-circle-o-right right"></i></a>
+				</div>
+			</li>
+			<li class="col-lg-3">
+				<div class="dashboard-stat color3">
+					<div class="datashow cf">
+						<div class="icon left">
+							<i class="fa fa-comments"></i>
+						</div>
+						<div class="details right">
+							<div class="number"><{$advisory_count}></div>
+							<div class="desc">顧問服務</div>
+						</div>
+					</div>
+					<a href="/admin/advisory/" class="more cf">更多<i class="fa fa-arrow-circle-o-right right"></i></a>
+				</div>
+			</li>
+			<li class="col-lg-3">
+				<div class="dashboard-stat color4">
+					<div class="datashow cf">
+						<div class="icon left">
+							<i class="fa fa-bar-chart"></i>
+						</div>
+						<div class="details right">
+							<div class="number"><{$report_count}></div>
+							<div class="desc">投資月報</div>
+						</div>
+					</div>
+					<a href="/admin/report/" class="more cf">更多<i class="fa fa-arrow-circle-o-right right"></i></a>
+				</div>
+			</li>
+			<li class="col-lg-3">
+				<div class="dashboard-stat color5">
+					<div class="datashow cf">
+						<div class="icon left">
+							<i class="fa fa-download"></i>
+						</div>
+						<div class="details right">
+							<div class="number"><{$document_count}></div>
+							<div class="desc">文件下載</div>
+						</div>
+					</div>
+					<a href="/admin/document/" class="more cf">更多<i class="fa fa-arrow-circle-o-right right"></i></a>
+				</div>
+			</li>
+			<li class="col-lg-3">
+				<div class="dashboard-stat color6">
+					<div class="datashow cf">
+						<div class="icon left">
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+						<div class="details right">
+							<div class="number"><{$saleschannel_count}></div>
+							<div class="desc">銷售機構</div>
+						</div>
+					</div>
+					<a href="/admin/saleschannel/" class="more cf">更多<i class="fa fa-arrow-circle-o-right right"></i></a>
+				</div>
+			</li>
+			<li class="col-lg-3">
+				<div class="dashboard-stat color6">
+					<div class="datashow cf">
+						<div class="icon left">
+							<i class="fa fa-question"></i>
+						</div>
+						<div class="details right">
+							<div class="number"><{$faq_count}></div>
+							<div class="desc">常見問題</div>
+						</div>
+					</div>
+					<a href="/admin/faq/" class="more cf">更多<i class="fa fa-arrow-circle-o-right right"></i></a>
+				</div>
+			</li>
+			<li class="col-lg-3">
+				<div class="dashboard-stat color7">
+					<div class="datashow cf">
+						<div class="icon left">
+							<i class="fa fa-user"></i>
+						</div>
+						<div class="txt-1 login_time">
+							登入時間： <{$smarty.session.login_user_info->data.last_login}>
+						</div>
+						<div class="details right">
+							<div class="number"><{$user_count}></div>
+							<div class="desc">管理員</div>
+						</div>
+					</div>
+					<a href="/admin/user/" class="more cf">更多<i class="fa fa-arrow-circle-o-right right"></i></a>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+	<!-- /.row -->
+<{/block}>

@@ -1,0 +1,135 @@
+footer {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	&.global_ft {
+		min-height: 145px;
+		@include bg(#fff);
+		// @include background-image(linear-gradient(#008ad8, #0066ba));
+		@include rhythm-padding(2, 1);
+		position: relative;
+		section {
+			&.col {
+				
+			}
+		}
+		.site_map {
+			position: absolute;
+			bottom: -5px;
+			right: 5px;
+		}
+	}
+	&.copyright {
+		@include bg(#000);
+		// @include background-image(linear-gradient(#0c141c, #424a54));
+		p, a {
+			color: #f7f8f8;
+			@include adjust-font-size-to(11px, 2);
+		}
+		p {
+			margin-bottom: 0;
+			@include respondTo(m){
+				padding: 0 1em;
+			};
+		}
+	}
+}
+
+.footer-sec {
+	@include respondTo(m){
+		width: 100%;
+		margin-bottom: 0.8em;
+	};
+	&.sec1 {
+		margin-right: 1em;
+		@include respondTo(m){
+			margin-right: 0;
+		};
+		.footer-sec-txt {
+			width: 120px;
+		}
+	}
+	&.sec2 {
+		.footer-sec-txt {
+			margin-right: 3em;
+			@include respondTo(m){
+				margin-right: 0;
+			};
+			p:first-of-type {
+				border-bottom: 1px solid #000;
+			}
+		}
+	}
+	&.sec3 {
+		position: relative;
+		margin-right: 1em;
+		border: 1px solid #c9caca;
+		@include respondTo(m){
+			margin-right: 0;
+			border: none;
+		};
+		.footer-sec-txt {
+			width: 310px;
+			height: 100%;
+			padding: 0 0.6em;
+			margin-left: 0.8em;
+			@include respondTo(m){
+				width: 230px;
+				padding: 0;
+				margin-left: 0;
+			};
+		}
+		.icon-like {
+			border-right: 1px solid #c9caca;
+			@include respondTo(m){
+				border: none;
+			};
+		}
+		a {
+			@include absolute(0, $l:0);
+			@include wh2();
+			display: block;
+		}
+		&:hover {
+			box-shadow: $boxShadowHover;
+		}
+	}
+	&.sec4 {
+		margin-right: 1.8em;
+		@include respondTo(m){
+			width: 49%;
+			margin-right: 0;
+			.icon {
+				margin: auto;
+			}
+		};
+	}
+	&.sec5 {
+		@include respondTo(m){
+			width: 49%;
+			.btn {
+				display: block;
+				margin: auto;
+			}
+		};
+	}
+}
+
+.footer_row2 {
+	.txt-ft-5 {
+		@include respondTo(m){
+			padding: 0.3em 1em;
+		};
+	}
+}
+.footer_row3 {
+	@include rhythm-margins(0.6, 0.3);
+}
+address {
+	font-style: normal;
+	display: inline;
+}
+
+.footer_row2 {
+	@include margin-trailer(0.6);
+}

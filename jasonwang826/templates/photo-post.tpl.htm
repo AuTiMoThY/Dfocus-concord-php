@@ -1,0 +1,38 @@
+<table cellspacing="0" cellpadding="2" border="1" width="640">
+	<tr>
+		<td align="right" width="160"><b>姓名</b></td>
+		<td><{$r->data['name']}></td>
+	</tr>
+	<tr>
+		<td align="right"><b>性別</b></td>
+		<td><{if $r->data['sex']=='M'}>男<{else}>女<{/if}></td>
+	</tr>
+	<tr>
+		<td align="right"><b>年齡</b></td>
+		<td><{$r->data['age']}></td>
+	</tr>
+	<tr>
+		<td align="right"><b>電子信箱</b></td>
+		<td><{if !empty($r->data['email'])}><{mailto address=$r->data['email']}><{/if}></td>
+	</tr>
+	<tr>
+		<td align="right"><b>聯絡市話</b></td>
+		<td><{$r->data['telno']}></td>
+	</tr>
+	<tr>
+		<td align="right"><b>行動電話</b></td>
+		<td><{$r->data['mphone']}></td>
+	</tr>
+	<tr>
+		<td align="right"><b>症狀描述</b></td>
+		<td><{$r->data['description']|nl2br}></td>
+	</tr>
+</table>
+<{if $openTo=='admin'}>
+	<p><a href="http://<{$smarty.server.HTTP_HOST}>/admin/login.php">後台登入連結</a></p>
+	<p><a href="http://<{$smarty.server.HTTP_HOST}>/admin/photo-post/?action=view&id=<{$r->data['id']}>">大手照過來後台連結</a></p>
+<{/if}>
+<{if $openTo=='doctor'}>
+	<p><a href="http://<{$smarty.server.HTTP_HOST}><{$r->data['photo']}>">上傳照片連結</a></p>
+<{/if}>
+

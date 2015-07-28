@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+button {
+	// background-color:#2ba6cb;
+	// border: 1px solid #2284a1;
+	// margin:0 0 1.25em;
+	// padding: 0.75em 1.5em 0.8125em 1.5em;
+	position:relative;
+	// display:inline-block;
+	// color:#fff;
+	font-size:1em;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+	line-height:1;
+	outline: none;
+	&.btn {
+		border: none;
+		background: none;
+	}
+}
+
+.btn {
+	// @include bg(#727171);
+	position: relative;
+	border: 0;
+	cursor: pointer;
+	// color: rgba(255, 255, 255, .84);
+	border-radius: 5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align:center;
+	// @include transition(all 0.3s cubic-bezier(0.4, 0, .2, 1));
+	// outline: 0!important;
+	// display: table;
+	display:inline-block;
+	a, input, button {
+		@include wh;
+		// padding: 6px 13px;
+		// color: #fff;
+		font-size: $fz-L;
+		font-weight: bold;
+		letter-spacing: 1px;
+		border: none;
+		background: none;
+	}
+	a {
+		// display: table-cell;
+	}
+	input {
+		border: none;
+		background: none;
+	}
+	&:hover {
+		// @include bg(#007BBF);
+		// @include box-shadow(1px 1px 3px #999);
+		a, input {
+			color: #fff;
+		}
+	}
+	&:active {
+		@include hover;
+	}
+	&-default.btn {
+		&:hover {
+			background-color: lighten($normal_color2, 20%);
+		}
+	}
+
+/*========================================================================*\
+		project 
+\*========================================================================*/
+	&-getmore {
+		margin: auto;
+	}
+	&-goback {
+		position: relative;
+		margin: auto;
+		display: table;
+		&:before {
+			@include psudoClass(dib);
+			// @include absolute();
+			@include wh2(14 28);
+			@include bg-i(-15, -30);
+			vertical-align: -0.5ex;
+			margin-right: 0.45em;
+		}
+	}
+	&-goback2 {
+		position: relative;
+		margin: auto;
+		display: table;
+		&:before {
+			@include psudoClass(dib);
+			// @include absolute();
+			@include wh2(14 28);
+			@include bg-i(-15, -30);
+			vertical-align: -0.5ex;
+			margin-right: 0.45em;
+		}
+		&.btn {
+			padding: 0;
+			&:hover {
+				box-shadow: none !important;
+			}
+		}
+	}
+	&-more {
+		&.btn-black.btn {
+			@include bg(#595757);
+			border-radius: 0;
+			margin: 0;
+		}
+		color: #fff;
+	}
+	&-goPrev {
+		@include wh2(14 28);
+		@include bg-i(-15, -146);
+		padding: 0;
+		margin: 0;
+	}
+	&-goNext {
+		@include wh2(14 28);
+		@include bg-i(-15, -175);
+		padding: 0;
+		margin: 0;
+	}
+	&-futuresSec1-active {
+		margin: 0 1.2em;
+		padding: 0;
+		&:before {
+			@include psudoClass(dib);
+			@include wh2(14);
+			@include bg-i(0, 0);
+			margin-right: 1.2em;
+		}
+	}
+	&-goComputer.btn {
+		display: block;
+		width: 154px + 15 + 15;
+		margin: auto;
+		padding: 0;
+		text-align: left;
+		&:before {
+			@include psudoClass();
+			@include absolute(9px, $r:0px);
+			@include wh2(14 28);
+			@include bg-i(-15, -88);
+		}
+		&:hover {
+			.cp_computer-intro & {
+				box-shadow: none !important;
+			}
+		}
+	}
+	&-pdtMore {
+		&.btn {
+			position: relative;
+			width: 88px + 15 + 15;
+			padding: 0;
+			margin: 0;
+			text-align: left;
+			&:before {
+				@include psudoClass();
+				@include absolute(10px, $r:0px);
+				@include wh2(15 29);
+				@include bg-i(-15, 0);
+			}
+			&:hover {
+				box-shadow: none !important;
+			}
+		}
+		&.btn2 {
+			width: 242px + 15 + 15;
+		}
+	}
+	&-gochatroomCnt.btn {
+		position: relative;
+		width: 88px + 15 + 8 + 8*2;
+		padding: 0 8px;
+		margin: 0;
+		border-radius: 0;
+		text-align: left;
+		color: #fff !important;
+		transition: all 0.3s ease-in-out;
+		&:before {
+			@include psudoClass();
+			@include absolute(5px, $r:8px);
+			@include wh2(14 28);
+			@include bg-i(-15, -175);
+		}
+		&:hover {
+			box-shadow: none !important;
+		}
+		.chatroom-item & {
+			@include bg(rgba(#000, 0.8));
+			&:hover {
+				@include bg(rgba(#000, 1));
+			}
+		}
+	}
+	&-goindex {
+		@include wh2(55 63);
+		@include bg-i(-31, -60);
+		&.btn {
+			padding: 0;
+			margin: 0;
+		}
+	}
+	&-goService {
+		&.btn {
+			&:hover {
+				box-shadow: none !important;
+			}
+		}
+	}
+	&-faq-tabs-next.btn {
+		padding: 0;
+		margin: 0;
+		border-radius: 0;
+		.faq-tabs-change & {
+			@include bg(#efefef);
+		}
+	}
+	&-faq-tabs-prev.btn {
+		padding: 0;
+		margin: 0;
+		border-radius: 0;
+		.faq-tabs-change & {
+			@include bg(#efefef);
+		}
+	}
+
+
+}//.btn
+
+.net_asset_value {
+	.btn-more {
+		// @include absolute(0, 0, 0);
+		// width: 65px;
+		float: right;
+		height: 21px;
+		margin: (45-21)/2*1px auto 0;
+		padding: 0 1em;
+		@include background-image(linear-gradient(#5a5a5a, #2d2d2d 30%, #444444));
+		font-size: em(11);
+		line-height: 21px;
+		&.btn {
+			color: #fff;
+		}
+		&:after {
+			display: inline-block;
+			@include triangle(bottom, #fff, 5px);
+			margin-left: 3px;
+		}
+	}
+	.btn-moreChart {
+		float: right;
+		// width: 65px;
+		height: 21px;
+		margin: (45-21)/2*1px 0.8em 0 0;
+		padding: 0 1em;
+		@include background-image(linear-gradient(#5a5a5a, #2d2d2d 30%, #444444));
+		font-size: em(11);
+		line-height: 21px;
+		&.btn {
+			color: #fff;
+		}
+		.fa {
+			margin-left: 8px;
+		}
+	}
+}
+
+

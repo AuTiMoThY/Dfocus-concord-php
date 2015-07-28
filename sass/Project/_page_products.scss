@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+.products_page, .chatroom_page {
+	.row2 {
+		&.fullbg {
+			&>.bg {
+				position: absolute;
+				top: 0;
+				z-index: 0;
+				@include bgRWD('bg-about-row4.jpg', 1920, 1000);
+				@include bg(fixed);
+				overflow: hidden;
+			}
+		}
+		.cnt {
+			padding: 2em 0;
+		}
+	}
+}
+
+.products_page {
+	.metro-row {
+		margin-bottom: 1.2em;
+	}
+}
+
+
+.prodCnt {
+	h2.title {
+
+	}
+	.row2 {
+		&.fullbg {
+			&>.bg {
+				// position: fixed;
+				top: 0;
+				z-index: 0;
+				@include wh2;
+				@include bg('bg-about-row4.jpg');
+				background-attachment: fixed;
+				overflow: hidden;
+			}
+		}
+	}
+	.cnt {
+		margin: 1em auto 3em;
+		&.editorDF {
+			@include bg(#fff);
+		}
+	}
+}
+
+
+.metro-block-style1.pdt {
+	width: 100%;
+	height: 410px;
+	.news-pic {
+		width: 50%;
+		&+.metro-art {
+			width: 50%;
+		}
+	}
+	.metro-art {
+		@include bg(#efefef);
+		&:before {
+			border-color: transparent #efefef transparent transparent;
+			@include translateY(-9em);
+		}
+	}
+	hgroup {
+		border-bottom: none;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+	h1, h2 {
+		margin-bottom: 0;
+	}
+	.pdt-shrink_text {
+		@include adjFontSize(17px, 1.5);
+		letter-spacing: 1px;
+	}
+	.txt-r1 {
+		color: color($colors, nor, 2);
+		@include adjFontSize(21px);
+		letter-spacing: 1px;
+	}
+	.btn {
+		@include absolute($b:1.5em, $l:2em);
+	}
+}
+
+@include respondTo(m){
+	.pdt.metro-block-style3 {
+		height: auto;
+		.news-pic {
+			height: 288px;
+		}
+		.metro-art {
+			height: 400px;
+		}
+	}
+};
+
+header.chatroom {
+	@include rhythm-margins(1.2);
+}
+.chatroom {
+	&-list {
+		width: 100%;
+	}
+	&-item {
+		width: 32%;
+		// width: (390 / 1200) * 100%;
+		min-height: 580px;
+		@include bg(#fff);
+		margin-left: 1.2%;
+		margin-bottom: 1em;
+		float: none;
+		@include col;
+		&:nth-of-type(3n+1) {
+			margin-left: 0;
+		}
+		@include respondTo(m){
+			width: 100%;
+			margin: 0 auto 0.5em;
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+		};
+	}
+	&-pic {
+		position: relative;
+		height: 0;
+		padding-bottom: (260 / 390) * 100%;
+		.btn {
+			@include absolute($b:0, $r:0);
+		}
+	}
+	&-during {
+		padding: 0 1.2em;
+		line-height: 40px;
+	}
+	&-block {
+		padding: 1.2em 1.2em 1.8em;
+		&-label {
+			width: 14%;
+			@include col;
+		}
+		&-cnt {
+			width: 84.5%;
+			@include col;
+		}
+	}
+	&-title {
+		margin-bottom: 0.8em;
+		&.txt-1_1 {
+			line-height: 1.2;
+		}
+	}
+}
+
+.pdt-item {
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		box-shadow: $boxShadowHover;
+	}
+}

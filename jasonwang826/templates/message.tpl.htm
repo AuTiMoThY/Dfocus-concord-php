@@ -1,0 +1,25 @@
+<table cellspacing="0" cellpadding="2" border="1" width="640">
+	<tr>
+		<td align="right" width="160"><b>留言標題</b></td>
+		<td><{$r->data['subject']}></td>
+	</tr>
+	<tr>
+		<td align="right"><b>留言者姓名</b></td>
+		<td><{$r->data['name']}></td>
+	</tr>
+	<tr>
+		<td align="right"><b>留言者email</b></td>
+		<td><{mailto address=$r->data['email']}></td>
+	</tr>
+	<tr>
+		<td align="right"><b>留言內容</b></td>
+		<td><{$r->data['content']|nl2br}></td>
+	</tr>
+</table>
+<{if $openTo=='admin'}>
+	<p><a href="http://<{$smarty.server.HTTP_HOST}>/admin/login.php">後台登入連結</a></p>
+	<p><a href="http://<{$smarty.server.HTTP_HOST}>/admin/message/?action=edit&id=<{$r->data['id']}>">病友互動討論區後台連結</a></p>
+<{/if}>
+<{if $openTo=='user'}>
+	<p>備註 : 本郵件是由系統自動寄發，請勿直接回覆。</p>
+<{/if}>

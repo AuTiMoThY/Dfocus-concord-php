@@ -1,0 +1,37 @@
+<{extends file="../layout.tpl.htm"}>
+<{block name="head-last"}>
+	<link rel="stylesheet" href="/admin/css/edit.css" type="text/css" />
+	<script src="/admin/js/edit.js"></script>
+<{/block}>
+<{block name="content"}>
+  <div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><{$page_title}></h3>
+		</div>
+	</div>
+	
+	<form class="edit" method="post" action="./" enctype="multipart/form-data">
+		<input type="hidden" name="action" value="update" />
+		<div class="row list">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						編輯<{$page_title}>
+						<div class="pull-right"></div>
+					</div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<label>首頁標語</label>
+							<textarea name="content" rows="5" class="form-control validate[required]"><{$r.content}></textarea>
+						</div>
+
+						<button type="submit" class="btn btn-success">確認修改</button>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</form>
+<{/block}>

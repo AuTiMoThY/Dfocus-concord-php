@@ -1,0 +1,53 @@
+<{extends file="../layout.tpl.htm"}>
+<{block name="head-last"}>
+	<link rel="stylesheet" href="/admin/css/edit.css" type="text/css" />
+	<script src="/admin/js/edit.js"></script>
+	<script src="<{$smarty.server.JASONWANG826_CONFIG.CKEDITOR_ALIAS}>/full/ckeditor.js"></script>
+	<script src="<{$smarty.server.JASONWANG826_CONFIG.CKEDITOR_ALIAS}>/full/adapters/jquery.js"></script>
+<{/block}>
+<{block name="content"}>
+  <div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><{$page_title}></h3>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	<!--
+		function onValidationComplete(f,v)	{
+			var $editor=$('textarea[name="content"');
+			if($editor.val()=='')	{
+				$('#content').validationEngine('showPrompt','* 此欄位不可空白','error', undefined, true);
+				v=false;
+			}
+			return v;
+		}
+	//-->
+	</script>
+	<form class="edit" method="post" action="./" onValidationComplete="onValidationComplete">
+		<input type="hidden" name="action" value="update" />
+		<input type="hidden" name="id" value="<{$r.id|escape}>" />
+		<div class="row list">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						編輯<{$page_title}> : <{$r.title}>
+						<div class="pull-right"><a href="./">列表</a></div>
+					</div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<div><label>內容</label></div>
+							<div id="content"></div>
+							<textarea name="content" rows="20" cols="80" class="html-editor"><{$r.content|escape}></textarea>
+						</div>
+
+						<button type="submit" class="btn btn-success">確認修改</button>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</form>
+<{/block}>

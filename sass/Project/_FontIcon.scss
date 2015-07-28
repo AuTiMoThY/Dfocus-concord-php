@@ -1,0 +1,413 @@
+@charset "UTF-8";
+
+
+$icon-spacing: 1px;
+$icon-layout: horizontal;
+@import "txtImg_title/*.png";
+@import "txtImg_futures/*.png";
+@include all-txtImg_title-sprites;
+@include all-txtImg_futures-sprites;
+
+.txtImg_title {
+     &-title {
+		@each $name in team, news, search, index_row1, lu, solution, cp, cp2, cpComputer1, cpComputer2, cpComputer3, chatroom, futures1, futures2, futures3, service4, service3, service2, service1, concordInf, map, monthlyreport, download, sales1, sales2, MemberProfile, team2, contact {
+		   &-#{$name} {
+		        @include wh2(txtImg_title-sprite-width(title-#{$name}) txtImg_title-sprite-height(title-#{$name}));
+		        margin: auto;
+		        &.mobile_title-group {
+		        	@include wh2(95% auto);
+		        	background-image: none;
+		        }
+		   }
+		}
+		&-team {
+			margin-bottom: 3em;
+		}
+		&-team2 {
+			@include rhythm-margins;
+		}
+		&-news {
+			@include bg(transparent);
+			margin: 2em auto;
+		}
+		&-cp {
+			margin-bottom: 2em;
+		}
+		&-cp2 {
+			margin: 2em auto;
+		}
+		&-cpComputer1, &-cpComputer2, &-cpComputer3 {
+			margin-bottom: 2em;
+			&.mobile_title {
+				height: auto;
+				background-image: none;
+			}
+		}
+		&-concordInf {
+			margin: 0 0 1.2em;
+		}
+		&-map {
+			margin: 3em 0 1.2em 2em;
+			&.mobile_title-group {
+				width: 100%;
+				margin: 1.2em 0;
+			}
+		}
+		&-sales1, &-sales2 {
+			margin: 0 0 1.2em;
+		}
+		&-MemberProfile {
+			margin-bottom: 3em;
+		}
+		&-lu {
+			&.mobile_title {
+				width: 100%;
+				height: auto;
+				background-image: none;
+			}
+		}
+		&-contact {
+			margin: 0 0 1.2em;
+		}
+     }
+}
+.txtImg_futures-futures {
+	@each $name in 1, 2, 3 {
+		&-#{$name} {
+			@include wh2(txtImg_futures-sprite-width(futures-#{$name}) txtImg_futures-sprite-height(futures-#{$name}));
+		}
+		&-#{$name}active {
+			@include wh2(txtImg_futures-sprite-width(futures-#{$name}active) txtImg_futures-sprite-height(futures-#{$name}active));
+		}
+	}
+}
+
+
+
+.txt_img {
+	&-goback {
+		@include wh2(114 28);
+		@include bg-t(-253, -31);
+	}
+	&-getmore {
+		@include wh2(133 29);
+		@include bg-t(-97, 0);
+	}
+	&-BusinessDivisons {
+		&[data-lang="en"] {
+			@include wh2(396 36);
+			@include bg-t(0, -102);
+		}
+		&[data-lang="tw"] {
+			@include wh2(310 33);
+			@include bg-t(0, -139);
+		}
+		&.mobile_title {
+			@include wh2(95% auto);
+			background-image: none;
+		}
+	}
+	&-morechatroom {
+		@include wh2(154 29);
+		@include bg-t(-97, -30);
+	}
+	&-goProdList {
+		@include wh2(195 28);
+		@include bg-t(-97, -60);
+	}
+	&-goChatList {
+		@include wh2(151 28);
+		@include bg-t(-231, 0);
+	}
+	&-goService {
+		@include wh2(134 28);
+		@include bg-t(-293, -60);
+	}
+}
+
+.txt {
+	&-spec {
+		color: color($colors, nor, 2);
+	}
+	&-1 {
+		color: #000;
+		@include adjFontSize(21px);
+		letter-spacing: 1px;
+	}
+	&-1_1 {
+		color: #000;
+		@include adjFontSize(24px);
+		letter-spacing: 1px;
+	}
+	&-1_2 {
+		color: #221815;
+		@include adjFontSize(17px);
+		letter-spacing: 1px;
+	}
+	&-1_3 {
+		color: #221815;
+		@include adjFontSize(17px, 1.8);
+		letter-spacing: 2px;
+	}
+	&-1_4 {
+		color: #000;
+		@include adjFontSize(15px);
+		letter-spacing: 1px;
+	}
+	&-2 {
+		@extend %txt-2;
+		&.btn {
+			.futures_intro-item & {
+				@extend %txt-2;
+			}
+		}
+	}
+	&-2_1 {
+		color: white;
+		@include adjFontSize(21px, 1.5);
+		letter-spacing: 1px;
+		font-family: $normal_font;
+	}
+	&-3 {
+		color: #000;
+		font-family: $ff-MyriadProLight;
+		@include adjFontSize(24px);
+		font-weight: normal;
+	}
+	&-3_1 {
+		font-size: em(13);
+		font-family: $normal_font;
+	}
+	&-3_2 {
+		color: #000;
+		font-family: $ff-MHeiHK;
+		@include adjFontSize(21px, 1);
+		font-weight: normal;
+	}
+	&-4 {
+		@include adjFontSize(35px);
+		letter-spacing: 2px;
+		font-weight: normal;
+		font-family: $normal_font;
+	}
+	&-5 {
+		@include adjFontSize(51px);
+	}
+	&-6 {
+		color: #fff;
+		font-size: em(17);
+		font-family: $ff-MyriadProLight;
+		letter-spacing: 1px;
+	}
+	&-6_1 {
+		color: #fff;
+		font-size: em(17);
+		font-family: $ff-MHeiHK;
+		letter-spacing: 1px;
+	}
+	&-r1 {
+		color: color($colors, nor, 2) !important;
+	}
+	&-ff1 {
+		font-family: $ff-MHeiHK;
+	}
+	&-b1 {
+		color: lighten($normal_color, 20%);
+	}
+}
+
+%txt-2 {
+	color: white;
+	@include adjFontSize(16px, 1.5);
+	letter-spacing: 1px;
+}
+
+.mobile_title {
+	text-align: center;
+	&.title-1 {
+		font-family: $ff-MyriadProLight;
+		font-weight: normal;
+		font-size: em(52);
+		letter-spacing: 1px;
+	}
+	&.title-2 {
+		width: 95%;
+		font-family: $normal_font;
+		font-weight: normal;
+		font-size: em(35);
+		letter-spacing: 1px;
+	}
+}
+
+.link {
+	&-1 {
+		transition: all 0.3s $easeInOutCubic;
+		border-bottom: 1px solid rgba(color($colors, nor, 2), 0);
+		&:hover {
+			border-bottom: 1px solid rgba(color($colors, nor, 2), 1);
+		}
+		&:active {
+			@include hover;
+		}
+	}
+	&-2 {
+		position: relative;
+		&:after {
+			@include psudoClass;
+			@include absolute($b:0, $l:0, $r:0);
+			@include wh(0%, 1);
+			@include bg(rgba(#000, 0));
+			margin: auto;
+			transition: all 0.3s $easeInOutCubic;
+		}
+		&:hover {
+			&:after {
+				width: 100%;
+				@include bg(rgba(#000, 1));
+			}
+		}
+	}
+	&-3 {
+		position: relative;
+		&:after {
+			@include psudoClass;
+			@include absolute($b:0, $l:0, $r:0);
+			@include wh(0%, 1);
+			@include bg(rgba(color($colors, nor, 2), 0));
+			margin: auto;
+			transition: all 0.3s $easeInOutCubic;
+		}
+		&:hover {
+			&:after {
+				width: 100%;
+				@include bg(rgba(color($colors, nor, 2), 1));
+			}
+		}
+	}
+}
+.txt-ft {
+	&-1 {
+		font-family: $normal_font;
+		font-size: em(17);
+		font-weight: bolder;
+		line-height: 21px;
+	}
+	&-2 {
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		font-size: em(15);
+		font-weight: bolder;
+		line-height: 21px;
+		&-1 {
+			font-size: em(21);
+			font-weight: normal;
+			line-height: 1.6;
+		}
+	}
+	&-3 {
+		font-size: em(21);
+		font-family: $normal_font;
+		font-weight: bold;
+		line-height: 1.6;
+		&-1 {
+			letter-spacing: 7px;
+		}
+		@include respondTo(m){
+			font-size: 1em;
+		};
+	}
+	&-4 {
+		font-family: $normal_font;
+		font-size: em(15);
+		font-weight: bold;
+		letter-spacing: 1px;
+		line-height: 1.2;
+		&-1 {
+			font-size: em(24);
+			@include respondTo(m){
+				font-size: 1.2em;
+			};
+		}
+	}
+	&-5 {
+		@include adjFontSize(11px, 1);
+		letter-spacing: 1px;
+		color: #595757;
+	}
+}
+
+
+
+
+button.icon {
+	margin: 0;
+	border: none;
+}
+
+
+.icon {
+	&-rss {
+		@include wh2(40);
+		@include bg-i(-89, 0);
+	}
+	&-fasebook {
+		@include wh2(40);
+		@include bg-i(-89, -41);
+	}
+	&-googleplus {
+		@include wh2(40);
+		@include bg-i(-89, -82);
+	}
+	&-twitter {
+		@include wh2(40);
+		@include bg-i(-89, -123);
+	}
+	&-in {
+		@include wh2(40);
+		@include bg-i(-89, -164);
+	}
+	&-pinterest {
+		@include wh2(40);
+		@include bg-i(-89, -205);
+	}
+	&-service {
+		@include wh2(70 65);
+		@include bg-i(-130, -69);
+		@include bg(#d7000f);
+		&:hover {
+			@include bg(darken(#d7000f, 20%));
+		}
+	}
+	&-phone {
+		@include wh2(70 65);
+		@include bg-i(-130, -135);
+		@include bg(#d7000f);
+	}
+	&-like {
+		@include wh2(70 65);
+		@include bg-i(-130, -201);
+		@include bg(#d7000f);
+		&:hover {
+			@include bg(darken(#d7000f, 20%));
+		}
+	}
+	&-fbtxt {
+		display: inline-block;
+		@include wh2(73 14);
+		@include bg-i(-203, 0);
+	}
+	&-futures {
+		display: block;
+		@include wh2(72 68);
+		@include bg-i(-130, 0);
+	}
+	&-download {
+		display: block;
+		@include wh2(45 53);
+		@include bg-i(-31, -124);
+	}
+	&-sales {
+		display: block;
+		@include wh2(46 54);
+		@include bg-i(-31, -178);
+	}
+}

@@ -1,0 +1,226 @@
+#top {
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	@include wh2(100% 7);
+	@include bg(#d7000f);
+}
+
+#menu {
+	display: none;
+	@include respondTo(Mobile){
+		@include absolute(0, $b:0, $r:0.8em);
+		display: block;
+		margin: auto;
+	};
+}
+
+/*========================================================================*\
+		>>	global_hd  quick_bar  logo
+\*========================================================================*/
+header {
+	&.global_hd {
+		position: fixed;
+		top: 7px;
+		// padding-top: 7px;
+		z-index: 50;
+		@include wh(100%, 90px);
+		@include bg('bg-header.png', 50%, 50%);
+		background-size: cover;
+		// @include background-image(linear-gradient(#00a1e9, #0086d1));
+		padding: 0 1em;
+		@include respondTo(Mobile){
+			position: fixed;
+			top: 0;
+			height: 50px;
+			padding: 7px 0.5em 0;
+		};
+		nav {
+			float: right;
+			// margin-left: 35%;
+			// margin-right: 1%;
+		}
+	}// header.global_hd  END
+
+	&#logo {
+		@include wh2(LOGO png);
+		position: absolute;
+		top: (90 - 45) / 2 * 1px;
+		left: 2em;
+		margin: auto;
+		@media screen and (max-width: 1280px) {
+		    width: 430px;
+		    height: 39px;
+		}
+		@include respondTo(Mobile){
+			width: 75%;
+			height: auto;
+			// padding-top: 13px;
+			top: 13px;
+			left: 1em;
+		};
+		a {
+			@include wh;
+			display: block;
+		}
+	}// header#logo  END
+}
+/*========================================================================*\
+		>>	main_nav
+\*========================================================================*/
+.main_nav {
+	height: 100%;
+	// position: relative;
+	@include respondTo(Mobile){
+		@include absolute(50px, $l:0);
+		width: 100%;
+		height: auto;
+		@include bg('bg-header.png', 50%, 50%, repeat-y);
+		display: none;
+		&.js-nav_open {
+			display: block;
+		}
+	};
+	@include respondTo(Sscreen){
+		// width: 55%;
+	};
+	ul {
+		position: relative;
+		height: 100%;
+		@media screen and (max-width: 1280px) {
+			margin-right: 90px;
+		}
+		@include respondTo(m){
+			height: 100vh;
+		};
+		&.subNav {
+			// @include relative($t:29px, $l:-20%);
+			@include absolute($t:65px, $l:-20%);
+			width: 140%;
+			height: auto;
+			.mobile_header & {
+				@include relative($t:0, $l:0);
+				width: 100%;
+			}
+		}
+	}
+	li {
+		&.quick_bar {
+			@include VerticalAlign;
+			margin: 0 2em;
+			@include respondTo(m){
+				top: 0;
+				width: 100%;
+				height: 40px;
+				margin: 0;
+				@include translateY(0);
+			};
+			@media screen and (max-width: 1280px) {
+				margin: auto;
+				position: absolute;
+				right: -90px;
+			};
+			.login {
+				a {
+					@include wh2(80 16);
+					@include bg-t(0, -85px);
+					margin: auto;
+				}
+			}
+		}// header.quick_bar  END
+	}
+	a {
+		// @include hide_txt;
+		height: 100%;
+		// padding-top: 14px;
+	}
+	&-item {
+		// @include VerticalAlign;
+		@include relative(25px);
+		height: 40px;
+		margin: 0 1em;
+		@include respondTo(m){
+			top: 0;
+			float: none;
+			width: 100%;
+			height: auto;
+			margin: 1em 0;
+			@include translateY(0);
+			span.wrap {
+				display: block;
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+			}
+		}
+		@media screen and (max-width: 1280px) {
+			margin: 0 0.6em;
+		};
+		@include respondTo(Sscreen){
+			margin: 0 0.3em;
+		};
+		a, span {
+			display: block;
+			text-align: center;
+		}
+		a {
+			position: relative;
+			z-index: 81;
+		}
+		@each $navItem, $w, $h, $x, $y in
+			(item1, 94, 16, 0, 0),
+			(item2, 96, 16, 0, -17px),
+			(item3, 62, 16, 0, -34px),
+			(item4, 63, 16, 0, -51px),
+			(item5, 64, 16, 0, -68px){
+			&.#{$navItem} .main_nav-txt {
+				// @include wh2($w $h);
+				// @include bg-t($x, $y);
+			}
+		}
+		.main_nav-txt {
+			margin: auto;
+			// @include VerticalAlign;
+			@extend .txt-2;
+		}
+		&:active {
+			
+		}
+		.subNav {
+			display: none;
+		}
+		&.js-hover {
+			.subNav {
+				display: block;
+				@include respondTo(m){
+					display: none;
+				};
+			}
+		}
+		&.mobile_nav {
+
+		}
+
+		// &:hover {
+		// 	@include bg(rgba(#000, 0.5));
+		// }
+	}// .main_nav-item  END
+
+}
+
+.subNav {
+	&-item {
+		position: relative;
+		z-index: 80;
+		float: none;
+		@include bg('bg-header.png', 100%, 50%);
+		a {
+			@extend .txt-2;
+		}
+	}
+	.padding {
+		@include absolute($t:-50px, $l:-25%);
+		z-index: 79;
+		@include wh2(150% 220px);
+	}
+}

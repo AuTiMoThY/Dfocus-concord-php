@@ -1,0 +1,151 @@
+/*------------------------------------*\
+		pagesBtn
+\*------------------------------------*/
+.pages_btn {
+	height: 70px;
+	margin: 30px auto 0px;
+	text-align: center;
+	display: table;
+	ul {
+		float: right;
+	}
+	li {
+		// width: 30px !important;
+		// height: 30px !important;
+		display: block;
+		margin-right: 5px;
+		text-align: center;
+		line-height: 30px;
+		float: left;
+		// @include circle(30px);
+		position: relative;
+		&.number {
+			@include wh(30px);
+			// background: #cfcfcf;
+			// border: 1px solid #cfcfcf;
+			@include respondTo(m){
+				width: 17%;
+			};
+			&:hover {
+				// background: $normal_color;
+				// border: 1px solid $normal_color;
+				a {
+					color: color($colors, nor, 2);
+				}
+
+			}
+			&:after {
+				content: '.';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			&:nth-of-type(2) {
+				&:after {
+					display: none;
+				}
+			}
+		}
+		&.active {
+			// background: $normal_color;
+			// border: 1px solid $normal_color;
+			&>a {
+				color: color($colors, nor, 2);;
+			}
+		}
+		&:hover {
+		}
+		&.prev {
+			width: auto;
+			border: none;
+			// padding: 6px;
+			background: none;
+			margin: 0 1.5em;
+			@include respondTo(m){
+				width: 100%;
+				margin: 0;
+			};
+			&>a {
+				color: #898989;
+				// @include triPrev($normal_color, 10px);
+				// display: inline-block;
+			}
+			.icon {
+				@include wh2(14 28);
+				@include bg-i(-15, -59);
+				margin-right: 1em;
+			}
+			&:hover {
+				background: none;
+				a {
+					color: #000;
+				}
+				.icon {
+					@include bg-i(-15, -30);
+				}
+			}
+		}
+		&.next {
+			width: auto;
+			border: none;
+			// padding: 6px;
+			background: none;
+			margin: 0 1.5em;
+			@include respondTo(m){
+				width: 100%;
+				margin: 0;
+			};
+			&>a {
+				color: #898989;
+				// @include triNext($normal_color, 10px);
+				// display: inline-block;
+			}
+			.icon {
+				@include wh2(14 28);
+				@include bg-i(-15, -117);
+				margin-left: 1em;
+			}
+			&:hover {
+				background: none;
+				a {
+					color: #000;
+				}
+				.icon {
+					@include bg-i(-15, -88);
+				}
+			}
+		}
+	}
+	.page_select {
+		width: auto;
+		// border: 1px solid $normal_color;
+		&:hover {
+			// background-color: $normal_color2;
+		}
+		select {
+			height: 25px;
+			width: auto;
+			background-color: #fff;
+			// border: 0;
+			cursor: pointer;
+			line-height: 30px;
+			font-weight: normal;
+			&:focus {
+				border-color: $normal_color2;
+			}
+		}
+	}
+	a {
+		display: block;
+		color: #000;
+		font-size: 17px;
+		font-family: $normal_font;
+		font-weight: bolder;
+		line-height: 30px;
+		&:hover {
+			@include scale(1.05);
+		}
+	}
+}
+
+

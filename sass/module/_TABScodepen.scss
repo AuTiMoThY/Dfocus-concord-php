@@ -1,0 +1,62 @@
+// @import url("http://fonts.googleapis.com/css?family=Lato");
+
+// $background: #9b59b6;
+// $tabs-base-color: #8e44ad;
+
+.tabs {
+  width: 100%;
+  float: none;
+  list-style: none;
+  position: relative;
+  text-align: left;
+  &>li {
+    float: left;
+    display: block;
+  }
+  input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  label {
+    display: block;
+    padding: 14px 21px;
+    margin: 0;
+    border-radius: 2px 2px 0 0;
+    text-transform: uppercase;
+    background: darken($tabs-base-color, 20);
+    cursor: pointer;
+    position: relative;
+    top: 4px + 2px; 
+    @include transition(all 0.2s ease-in-out);
+    &:hover {
+      background: darken($tabs-base-color, 10);
+    }
+  }
+  %activeColor {
+    background: darken($tabs-base-color, 0);
+  }
+  .tab-content{
+    width: 100%;
+    z-index: 2;
+    display: none; 
+    overflow: hidden;
+    // padding: 25px;
+    position: absolute;
+    // margin-top: -2px;
+    // top: 53px;
+    left: 0; 
+    @extend %activeColor;
+  }
+  //The Magic
+  [id^="tab"]:checked + label {
+    top: 0 + 2px;
+    padding-top: 18px;
+    padding-bottom: 16px;
+    font-weight: bolder;
+    @extend %activeColor;
+  }
+  [id^="tab"]:checked ~ [id^="tab-content"] {
+    display: block;
+  }
+}

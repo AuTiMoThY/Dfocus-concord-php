@@ -1,0 +1,91 @@
+<{extends file="../layout.tpl.htm"}>
+<{block name="head-last"}>
+	<link rel="stylesheet" href="/admin/css/edit.css" type="text/css" />
+	<script src="/admin/js/edit.js"></script>
+	<script src="<{$smarty.server.JASONWANG826_CONFIG.CKEDITOR_ALIAS}>/full/ckeditor.js"></script>
+	<script src="<{$smarty.server.JASONWANG826_CONFIG.CKEDITOR_ALIAS}>/full/adapters/jquery.js"></script>
+<{/block}>
+<{block name="content"}>
+  <div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><{$page_title}></h3>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	<!--
+		function onValidationComplete(f,v)	{
+			var $editor=$('textarea[name="content"');
+			if($editor.val()=='')	{
+			//	$('#content').validationEngine('showPrompt','* 此欄位不可空白','error', undefined, true);
+			//	v=false;
+			}
+			return v;
+		}
+	//-->
+	</script>
+	<form class="edit" method="post" action="./" enctype="multipart/form-data" onValidationComplete="onValidationComplete">
+		<input type="hidden" name="action" value="<{if $smarty.request.action=='new'}>insert<{else}>update<{/if}>" />
+		<input type="hidden" name="id" value="<{$r.id|escape}>" />
+		<div class="row list">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<{if $smarty.request.action=='new'}>新增<{elseif $smarty.request.action=='edit'}>編輯<{/if}><{$page_title}>
+						<div class="pull-right"><a href="./">列表</a></div>
+					</div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<label>大標</label>
+							<input type="text" name="title" value="<{$r.title}>" class="form-control validate[required]">
+						</div>
+
+						<div class="form-group">
+							<label>小標</label>
+							<input type="text" name="stitle" value="<{$r.stitle}>" class="form-control validate[required]">
+						</div>
+
+						<div class="form-group">
+							<label>圖片上傳</label>
+							<input type="file" name="icon" class="validate[<{if $smarty.request.action=='new'}>required,<{/if}>custom[image-file]] image-upload" preview-at="icon">
+							尺寸 : 600 px * 410 px
+							<div src="<{$r.icon|escape}>" id="icon" class="image-preview image-preview-crop" width="600" height="410"></div>
+						</div>
+
+						<div class="form-group">
+							<label>列表說明文字</label>
+							<textarea name="brief" rows="4" class="form-control validate[required]"><{$r.brief|escape}></textarea>
+						</div>
+
+						<div class="form-group">
+							<div><label>內容</label></div>
+							<div id="content"></div>
+							<textarea name="content" rows="12" cols="80" class="html-editor"><{$r.content|escape}></textarea>
+						</div>
+
+						<div class="form-group">
+							<label>連結</label>
+							<input type="text" name="link" value="<{$r.link}>" class="form-control validate[]">
+						</div>
+
+						<div class="form-group">
+							<label>排序</label>
+							<div class="ord" name="ord" maxOrd="<{$maxOrd}>" value="<{$r.ord|escape}>"></div>
+						</div>
+
+						<div class="form-group">
+							<label>是否顯示</label>
+							<label class="radio-inline"><input type="radio" name="enable" value="Y"<{if $r.enable=='Y'}> checked<{/if}>>是</label>
+							<label class="radio-inline"><input type="radio" name="enable" value="N"<{if $r.enable=='N'}> checked<{/if}>>否</label>
+						</div>
+			
+						<button type="submit" class="btn btn-success">確認修改</button>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</form>
+<{/block}>

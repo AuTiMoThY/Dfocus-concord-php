@@ -1,0 +1,51 @@
+<ul class="pager">
+	<li class="total-rownum">共 <{$pager->rowNum}> 筆資料 /</li>
+	<li class="total">共 <{$pager->pageNum}> 頁 /</li>
+	<li class="jump">
+		第
+		<select class="goto-page">
+			<{for $i=1 to $pager->pageNum}>
+				<option value="<{$i-1}>"<{if ($i-1)==$pager->pageNo}> selected<{/if}>><{$i}></option>
+			<{/for}>
+		</select>
+		頁 /
+	</li>
+	<li class="first<{if $pager->pageNo==0 }> disable<{/if}>" pageno="0">頂頁</li>
+	<{if $pager->pageNo>0 }><li class="prev" pageno="<{$pager->pageNo-1}>">上頁</li><{/if}>
+	<{if $pager->pageNum<=10 }>
+		<{for $p=1 to $pager->pageNum}>
+			<li<{if $pager->pageNo==$p-1 }> class="current active"<{/if}> pageno="<{$p-1}>"><{$p}></li>
+		<{/for}>
+	<{else}>
+		<{if $pager->pageNo < 5 }>
+			<{* 1 2 [3] 4 5 6 7 ... -2 -1 *}>
+			<{for $p=1 to 7}>
+				<li<{if $pager->pageNo==$p-1 }> class="current active"<{/if}> pageno="<{$p-1}>"><{$p}></li>
+			<{/for}>
+			<li>...</li>
+			<li pageno="<{$pager->pageNum-2}>"><{$pager->pageNum-1}></li>
+			<li pageno="<{$pager->pageNum-1}>"><{$pager->pageNum}></li>
+		<{elseif $pager->pageNo > $pager->pageNum-6 }>
+			<{* 1 2 ... -7 -6 -5 -4 [-3] -2 -1 *}>
+			<li pageno="0">1</li>
+			<li pageno="1">2</li>
+			<li>...</li>
+			<{for $p=$pager->pageNum-6 to $pager->pageNum}>
+				<li<{if $pager->pageNo==$p-1 }> class="current active"<{/if}> pageno="<{$p-1}>"><{$p}></li>
+			<{/for}>
+		<{else}>
+			<{* 1 2 ... 5 6 [7] 8 9 ... -2 -1 *}>
+			<li pageno="0">1</li>
+			<li pageno="1">2</li>
+			<li>...</li>
+			<{for $p=$pager->pageNo-1 to $pager->pageNo+3}>
+				<li<{if $pager->pageNo==$p-1 }> class="current active"<{/if}> pageno="<{$p-1}>"><{$p}></li>
+			<{/for}>
+			<li>...</li>
+			<li pageno="<{$pager->pageNum-2}>"><{$pager->pageNum-1}></li>
+			<li pageno="<{$pager->pageNum-1}>"><{$pager->pageNum}></li>
+		<{/if}>
+	<{/if}>
+	<{if $pager->pageNo+1<$pager->pageNum }><li class="next" pageno="<{$pager->pageNo+1}>">下頁</li><{/if}>
+	<li class="last<{if $pager->pageNo+1>=$pager->pageNum }> disable<{/if}>" pageno="<{$pager->pageNum-1}>">末頁</li>
+</ul>

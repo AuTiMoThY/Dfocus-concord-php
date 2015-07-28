@@ -1,0 +1,599 @@
+@charset "UTF-8";
+
+//------------------------------------*\
+//		AuTiMoThY
+//		V 5.0.1
+//------------------------------------*/
+@import "function/contains";
+@import "function/is-length";
+////
+// A collection of function for advanced type checking
+// @author Hugo Giraudel
+////
+
+@function is-dib($value) {
+	
+	@return $value == 'dib';
+}
+
+@function is-number($value) {
+  @return type-of($value) == 'number';
+}
+ 
+@function is-time($value) {
+  @return is-number($value) and index('ms' 's', unit($value)) != null;
+}
+ 
+@function is-duration($value) {
+  @return is-time($value);
+}
+ 
+@function is-angle($value) {
+  @return is-number($value) and index('deg' 'rad' 'grad' 'turn', unit($value)) != null;
+}
+ 
+@function is-frequency($value) {
+  @return is-number($value) and index('Hz' 'kHz', unit($value)) != null;
+}
+ 
+@function is-integer($value) {
+  @return is-number($value) and round($value) == $value;
+}
+ 
+@function is-relative-length($value) {
+  @return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', unit($value)) != null;
+}
+ 
+@function is-absolute-length($value) {
+  @return is-number($value) and index('cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null;
+}
+ 
+@function is-percentage($value) {
+  @return is-number($value) and unit($value) == '%';
+}
+ 
+@function is-length-HG($value) {
+  @return is-relative-length($value) or is-absolute-length($value);
+}
+ 
+@function is-resolution($value) {
+  @return is-number($value) and index('dpi' 'dpcm' 'dppx', unit($value)) != null;
+}
+ 
+@function is-position($value) {
+  @return is-length-HG($value) or is-percentage($value) or index('top' 'right' 'bottom' 'left' 'center', $value) != null;
+}
+
+
+
+@function is-size($value) {
+  @return is-length($value)
+          or contains("fill" "fit-content" "min-content" "max-content", $value);
+}
+@function is-string($value) {
+	@return type-of($value) == "string";
+}
+
+
+@mixin wh($width:100%, $height:$width) {
+	@if type-of($width) == number {
+		@if (unitless($width)) {
+			$width: $width * 1px;
+		}
+		@if (unitless($height)) {
+			$height: $height * 1px;
+		}
+		width: $width;
+		height: $height;
+	} @else if $width == "auto" {
+		width: $width;
+		height: $height;
+	} @else {
+		$name: $width;
+		$file: $height;
+		width: image-width("#{$name}.#{$file}");
+		height: image-height("#{$name}.#{$file}");
+	}
+}
+@mixin wh2($value:100%) {
+	$width: nth($value, 1);
+	$height: $width;
+
+	@if length($value) > 1 {
+		$height: nth($value, 2);
+	}
+
+	@if is-size($width) {
+		width: $width;
+	} @else if (not(is-string($width)) and unitless($width)) {
+		width: $width * 1px;
+	} @else {
+		//@warn "`#{$width}`";
+	}
+
+	@if is-size($height) {
+		height: $height;
+	} @else if (not(is-string($height)) and unitless($height)) {
+		height: $height * 1px;
+	} @else {
+		//@warn "`#{$height}`";
+	}
+
+
+	@if is-string($width) and is-string($height) {
+		$name: $width;
+		$file: $height;
+		width: image-width("#{$name}.#{$file}");
+		height: image-height("#{$name}.#{$file}");
+	}
+}
+@mixin bg($name, $bgpx:0, $bgpy:0, $repeat:no-repeat) {
+	// $name: unquote($name);
+	$repeat: unquote($repeat);
+	@if type-of($name) == number {
+		//  background-position
+		$bgpxx: $name;
+		$bgpy: $bgpx;
+		@if (unitless($bgpxx)) {
+			$bgpxx: $bgpxx * 1px;
+		}
+		@if (unitless($bgpy)) {
+			$bgpy: $bgpy * 1px;
+		}
+		background-position: $bgpxx $bgpy;
+	}
+	@else if type-of($name) == color {
+		//  background-color
+		background-color: $name;
+	}
+	@else if $name == "fixed" or $name == "scroll" {
+		$atta: $name;
+		background-attachment: $atta;
+	}
+	@else if $name == "none"{
+		background-image: none;
+	}
+	@else {
+		background: image-url(#{$name}) $bgpx $bgpy $repeat;
+	}
+}
+@mixin bg-i($x:0, $y:0) {
+		@if (unitless($x)) {
+			$x: $x * 1px;
+		}
+		@if (unitless($y)) {
+			$y: $y * 1px;
+		}
+	@include bg('iconTxt.png', $x, $y);
+}
+@mixin bg-t($x:0, $y:0) {
+		@if (unitless($x)) {
+			$x: $x * 1px;
+		}
+		@if (unitless($y)) {
+			$y: $y * 1px;
+		}
+	@include bg('txts.png', $x, $y);
+}
+
+@mixin hover($top:1px, $left:1px) {
+	@include translate($top, $left);
+}
+
+@mixin psudoClass($display:null) {
+	@if is-dib($display) {
+		content: '';
+		display: inline-block;
+	} @else {
+		content: '';
+		display: block;
+	}
+}
+
+/// Since the current way to qualify a class from within its ruleset is quite
+/// ugly, here is a mixin providing a friendly API to do so.
+/// @author Hugo Giraudel
+/// @param {String} $element-selector - Element selector
+@mixin qualify($element-selector) {
+  @at-root #{$element-selector + &} {
+    @content;
+  }
+}
+
+
+@mixin picImg() {
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+@mixin ib {
+  display: inline-block;
+  vertical-align: middle !important;
+  // padding:0;
+  // background-image:none
+}
+@mixin col {
+  display: inline-block;
+  vertical-align: top;
+}
+@mixin col-2 {
+  @include col;
+  width: 49%;
+}
+@mixin col-3 {
+  @include col;
+  width: 32%;
+}
+@mixin col-4 {
+  @include col;
+  width: 24.9%;
+}
+@mixin atRoot() {
+	@at-root { @content; }
+}
+
+@mixin bgRWD($bg, $bgW, $bgH) {
+	@if $bg == 'null' {
+		@include wh2(100% 0);
+		padding-bottom: ($bgH / $bgW) * 100%;
+		@include background-size(cover);
+	} @else {
+		width: 100%;
+		height: 0;
+		padding-bottom: ($bgH / $bgW) * 100%;
+		@include bg('#{$bg}', 50%, 50%);
+		@include background-size(cover);
+	}
+}
+
+@function color($map, $keys...) {
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+
+	@return $map;
+	// @if $array == 'gr' {
+	// 	@if map-has-key($gray_colors, $key) {
+	// 		@return map-get($gray_colors, $key);
+	// 	}
+
+	// 	@warn "Unkown '#{$key}' in $gray_colors.";
+	// 	@return $key;
+		
+	// } @else if $array == 'nor' {
+	// 	@if map-has-key($normal_colors, $key) {
+	// 		@return map-get($normal_colors, $key);
+	// 	}
+
+	// 	@warn "Unkown '#{$key}' in $colors.";
+	// 	@return $key;
+	// } @else {
+	// 	@warn "Unkown '#{$array}'.";
+	// }
+
+}
+
+/// Shorthand mixin for offset positioning
+/// @param {String} $position - Either `relative`, `absolute` or `fixed`
+/// @param {Length} $top [null] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+@mixin position($position, $t: null, $r: null, $b: null, $l: null) {
+  position: $position;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}
+/// Shorthand mixin for absolute positioning
+/// Serves as an alias for `position(absolute, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+/// Shorthand mixin for relative positioning
+/// Serves as an alias for `position(relative, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+/// Shorthand mixin for fixed positioning
+/// Serves as an alias for `position(fixed, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+//========================================================================*\
+//	>	align center
+//========================================================================*/
+@mixin align-C() {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+@mixin VerticalAlign() {
+	position: relative;
+	top: 50%;
+	@include translateY(-50%);
+}
+@mixin vc() {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+///  Maintain Aspect Ratio Mixin
+@mixin aspectRatio($width, $height) {
+	@if (unitless($width)) {
+		$width: $width * 1px;
+	}
+	@if (unitless($height)) {
+		$height: $height * 1px;
+	}
+	position: relative;
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: ($height / $width) * 100%;
+	}
+	> .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+
+
+//========================================================================*\
+//	>	text
+//========================================================================*/
+@mixin hide_txt() {
+	text-indent: 110%;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+}
+@mixin ellipsis($width: 100%) {
+  display: inline-block;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+@mixin adjFont($to-size, $font-weight:normal, $lines: auto, $from-size: $base-font-size) {
+	@include adjust-font-size-to($to-size, $lines, $from-size);
+	font-weight: $font-weight;
+}
+@mixin adjFontSize($to-size, $lines: auto, $from-size: $base-font-size) {
+	@include adjust-font-size-to($to-size, $lines, $from-size);
+}
+
+$browser-context: 16;
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+
+//========================================================================*\
+//	>	Shape
+//========================================================================*/
+@mixin circle($width, $height:$width) {
+	width: $width;
+	height: $height;
+	border-radius: 50%;
+}
+@mixin triPrev($color, $w, $w2:(($w * 2) - 3px)) {
+	@include wh(0);
+	border: {
+		style: solid;
+		width: $w $w2 $w 0;
+		color: transparent $color transparent transparent;
+	}
+}
+@mixin triNext($color, $w, $w2:(($w * 2) - 3px)) {
+	@include wh(0);
+	border: {
+		style: solid;
+		width: $w 0 $w $w2;
+		color: transparent transparent transparent $color;
+	}
+}
+@mixin triBtm($color, $w, $w2:(($w * 2) - 3px)) {
+	@include wh(0);
+	border: {
+		style: solid;
+		width: $w2 $w 0 $w;
+		color: $color transparent transparent transparent;
+	}
+}
+@mixin triTop($color, $w, $w2:(($w * 2) - 3px)) {
+	@include wh(0);
+	border: {
+		style: solid;
+		width: 0 $w $w2 $w;
+		color: transparent transparent $color transparent;
+	}
+}
+
+/// Triangle helper mixin
+/// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
+/// @param {Color} $color [currentcolor] - Triangle color 
+/// @param {Length} $size [1em] - Triangle size
+@mixin triangle($direction, $color: currentcolor, $size: 1em) {
+  @if not index(top right bottom left, $direction) {
+    @error "Direction must be either `top`, `right`, `bottom` or `left`.";
+  }
+
+  width: 0;
+  height: 0;
+  content: '';
+  z-index: 2;
+  border-#{opposite-position($direction)}: ($size * 1.5) solid $color;
+  
+  $perpendicular-borders: $size solid transparent;
+  
+  @if $direction == top or $direction == bottom {
+    border-left:   $perpendicular-borders;
+    border-right:  $perpendicular-borders;
+  } @else if $direction == right or $direction == left {
+    border-bottom: $perpendicular-borders;
+    border-top:    $perpendicular-borders;
+  }
+}
+
+
+
+
+
+//========================================================================*\
+//	>	animation
+//========================================================================*/
+// https://css-tricks.com/snippets/sass/
+// http://codepen.io/seanseansean/pen/GgxrXw?editors=110
+// @Author:  Sean Dempsey
+$easeSean: (
+  in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530),
+  in-cubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190),
+  in-quart:     cubic-bezier(0.895,  0.030, 0.685, 0.220),
+  in-quint:     cubic-bezier(0.755,  0.050, 0.855, 0.060),
+  in-sine:      cubic-bezier(0.470,  0.000, 0.745, 0.715),
+  in-expo:      cubic-bezier(0.950,  0.050, 0.795, 0.035),
+  in-circ:      cubic-bezier(0.600,  0.040, 0.980, 0.335),
+  in-back:      cubic-bezier(0.600, -0.280, 0.735, 0.045),
+  out-quad:     cubic-bezier(0.250,  0.460, 0.450, 0.940),
+  out-cubic:    cubic-bezier(0.215,  0.610, 0.355, 1.000),
+  out-quart:    cubic-bezier(0.165,  0.840, 0.440, 1.000),
+  out-quint:    cubic-bezier(0.230,  1.000, 0.320, 1.000),
+  out-sine:     cubic-bezier(0.390,  0.575, 0.565, 1.000),
+  out-expo:     cubic-bezier(0.190,  1.000, 0.220, 1.000),
+  out-circ:     cubic-bezier(0.075,  0.820, 0.165, 1.000),
+  out-back:     cubic-bezier(0.175,  0.885, 0.320, 1.275),
+  in-out-quad:  cubic-bezier(0.455,  0.030, 0.515, 0.955),
+  in-out-cubic: cubic-bezier(0.645,  0.045, 0.355, 1.000),
+  in-out-quart: cubic-bezier(0.770,  0.000, 0.175, 1.000),
+  in-out-quint: cubic-bezier(0.860,  0.000, 0.070, 1.000),
+  in-out-sine:  cubic-bezier(0.445,  0.050, 0.550, 0.950),
+  in-out-expo:  cubic-bezier(1.000,  0.000, 0.000, 1.000),
+  in-out-circ:  cubic-bezier(0.785,  0.135, 0.150, 0.860),
+  in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550)
+);
+
+@function ease($key) {
+  @if map-has-key($easeSean, $key) {
+    @return map-get($easeSean, $key);
+  }
+
+  @warn "Unkown '#{$key}' in $ease.";
+  @return null;
+}
+
+
+//========================================================================*\
+//	>	RWD
+//========================================================================*/
+// Large Display: 1200px
+// Default: 980px
+// Tablet: 768px
+// Mobile: 480px
+@mixin respondTo($screenWidth) {
+  @if $screenWidth == Lscreen {
+    @media screen and (max-width: 1920px) { @content; }
+  }
+  @else if $screenWidth == Mscreen {
+    @media screen and (max-width: 1366px) { @content; }
+  }
+  @else if $screenWidth == Sscreen {
+    @media screen and (max-width: 1200px) { @content; }
+  }
+  @else if $screenWidth == Default {
+    @media screen and (max-width: 1024px) { @content; }
+  }
+  @else if $screenWidth == Tablet {
+    @media screen and (max-width: 768px) { @content; }
+  }
+  @else if $screenWidth == 'Mobile' or 'm' {
+    @media screen and (max-width: 480px) { @content; }
+  }
+  @else if is-number($screenWidth) {
+  	@media screen and (max-width: #{$screenWidth}px) { @content; }
+  }
+}
+
+//========================================================================*\
+//	>	project
+//========================================================================*/
+@mixin Diamond($color, $w, $h:$w) {
+	left: -1em;
+	@include wh($w, $h);
+	@include bg($color);
+	// transform: rotateZ(45deg);
+	@include rotateZ(45deg);
+}
+@mixin ul() {
+	margin-bottom: 1.25em;
+	list-style-position: outside;
+	font-size: 1em;
+	line-height: 1.6;
+}
+@mixin specBorder() {
+	@include bg(#f4f4f4);
+	border: 2px solid #bec2c5;
+	@include box-shadow(inset 3px 3px 0 rgba(0, 0, 0, 0.06));
+	padding: 4px 0;
+	color: #303030;
+}
+@mixin container() {
+	position: relative;
+	top: 200px;
+	padding: 80px;
+	margin-bottom: 200px;
+}
+@mixin input_common() {
+	@include wh(240px, 30px);
+	line-height: 30px;
+	border: 1px solid #b09e70;
+}
+@mixin label_common() {
+	@include wh(70px, 30px);
+	display: inline-block;
+	@include member_txt1;
+	text-align: right;
+	margin-right: 10px;
+}
+@mixin addToCartBtn() {
+	@include wh(167px, 43px);
+	@include bg('iconTxt.png', 0, -368px);
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@mixin line() {
+	@include psudoClass;
+	@include wh;
+	@include bg('line2.png', 0, 0, repeat);
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+

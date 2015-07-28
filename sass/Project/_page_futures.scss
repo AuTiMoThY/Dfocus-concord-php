@@ -1,0 +1,250 @@
+@charset "UTF-8";
+
+.futures {
+	&-list {}
+	&-item {
+		width: 32.5%;
+		margin-left: 1%;
+		&:first-of-type {
+			margin-left: 0;
+		}
+		figure {
+			position: relative;
+			width: 100%;
+			margin-bottom: 1.3em;
+			a {
+				display: block;
+			}
+		}
+		figcaption {
+			@include absolute(0, $r:0);
+			width: 100%;
+			height: 100%;
+			@include bg(rgba(black, 0.7));
+			@include opacity(0);
+			transition: all 0.3s ease(in-quad);
+			// &:before {
+			// 	@include psudoClass(dib);
+			// 	vertical-align: middle;
+			// 	width: 0;
+			// 	height: 100%;
+			// }
+			@include respondTo(m){
+				height: auto;
+				padding: 0;
+				@include opacity(1);
+				position: relative;
+			};
+		}
+		&-intro {
+			// display: table;
+			width: 80%;
+			margin: auto;
+			@include absolute($t:50%, $r:0, $l:0);
+			vertical-align: middle;
+			text-align: center;
+			@include translateY(-50%);
+			@include respondTo(m){
+				@include relative(0);
+				@include translateY(0);
+			};
+		}
+		&:hover {
+			figcaption {
+				@include opacity(1);
+			}
+		}
+		@include respondTo(m){
+			width: 100%;
+			margin-bottom: 1.2em;
+		};
+	}
+}
+
+.index_page {
+	.futures {
+		&-list {}
+		&-item {
+			.txt-1 {
+				line-height: 1.5;
+				letter-spacing: 2px;
+			}
+			figure {
+				@include respondTo(m){
+					max-width: 386px;
+					margin: auto;
+				};
+			}
+
+		}
+	}
+}
+.futures {
+	&-item {
+		.txt-1 {
+			line-height: 1.5;
+			letter-spacing: 2px;
+		}
+	}
+}
+
+
+.futures_bar {
+	&-banner {
+		position: relative;
+		width: 100%;
+	}
+	&-bg {
+		@include wh2(100% 426);
+		@include bg('futures_bar-banner1.jpg', 50%, 50%);
+	}
+	&-list {
+		height: 255px;
+		@include absolute(0, 0, 0, 0);
+		margin: auto;
+	}
+	&-item {
+		position: relative;
+		@include circle(255px);
+		@include bg(rgba(#fff, 0.5));
+		transition: all 0.3s ease(in-out-cubic);
+		margin-left: (1000 - (255 * 3)) / 2 * 1px;
+		cursor: pointer;
+		@include respondTo(m){
+			@include absolute();
+			margin-left: 0;
+			display: none;
+			&.active {
+				display: block;
+			}
+		};
+		&:first-of-type {
+			margin-left: 0;
+		}
+		&:hover {
+			box-shadow: $boxShadowHover;
+		}
+		&:hover, &.active {
+			@include bg(rgba(#000, 0.8));
+		}
+		.txt {
+			@include absolute(0, 0, 0, 0);
+			margin: auto;
+		}
+		a {
+			@include absolute($t:0, $l:0);
+			z-index: 99;
+			@include wh2;
+			display: none;
+		}
+		&.active {
+			a {
+				display: block;
+			}
+		}
+	}
+	&.futuresSec1-active {
+		.futures_bar-bg {
+			@include bg('futures_bar-banner1.jpg', 50%, 50%);
+		}
+	}
+	&.futuresSec2-active {
+		.futures_bar-bg {
+			@include bg('futures_bar-banner2.jpg', 50%, 50%);
+		}
+	}
+	&.futuresSec3-active {
+		.futures_bar-bg {
+			@include bg('futures_bar-banner3.jpg', 50%, 50%);
+		}
+	}
+	&-container {
+		position: relative;
+		height: 270px;
+		@include bg(#191919);
+		@include respondTo(m){
+			height: 450px;
+		};
+	}
+}
+
+.futures_intro {
+	&-list {
+		position: relative;
+		@include wh2;
+	}
+	&-item {
+		display: none;
+		@include absolute(0, $l:0);
+		@include wh2;
+		padding-top: 4em;
+		@include respondTo(m){
+			padding-top: 1em;
+		};
+		&:before {
+			@include psudoClass;
+			@include absolute(-20px);
+			margin: auto;
+			@include triTop(#191919, 20px, 23px);
+		}
+	}
+}
+#futuresSec1Intro.futures_intro-item:before {
+	@include absolute($l:(255/2)*1px-20);
+}
+#futuresSec2Intro.futures_intro-item:before {
+	@include absolute($r:0, $l:0);
+}
+#futuresSec3Intro.futures_intro-item:before {
+	@include absolute($r:(255/2)*1px-20);
+}
+
+$gutterW: 1.5em;
+.futures-form {
+	.col-6 {
+		&:first-of-type {
+			padding-right: $gutterW;
+		}
+		&+.col-6 {
+			padding-left: $gutterW;
+			padding-top: 1em;
+		}
+	}
+	.input_required {
+		.frm__label {
+			&:after {
+				content: '*';
+				color: #e60012;
+			}
+		}
+	}
+}
+
+.futures_fund-link {
+	.col-6 {
+		&:first-of-type {
+			padding-right: 1.5em;
+		}
+		&+.col-6 {
+			padding-left: 1.5em;
+		}
+	}
+	.pic {
+		@include wh2(100% 233px);
+	}
+	img {
+		max-width: none;
+		width: 100%;
+	}
+	figcaption {
+		@include bg(#e60012);
+	}
+	figure {
+		&:hover {
+			box-shadow: $boxShadowHover;
+			img {
+				@include scale(1.05);
+			}
+		}
+	}
+}

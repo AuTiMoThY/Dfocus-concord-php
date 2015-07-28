@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+@media only screen and (min-width : 1025px) {
+
+	#marsoc .cell {
+	  display:table-cell;
+	  vertical-align: middle;
+	  border: 1px solid #d1c9b1; 
+	}
+	#marsoc .sp {
+	  display:table-cell;
+	  width:.5%; 
+	}
+	#marcomm {
+	  width: 77%;
+	  padding: 1em; 
+	}
+	#socmedia {
+	  width: 22.5%; 
+	}
+	#mce-responses {
+	    position: absolute;
+	    top: 0;
+	    width: 28%;
+	}
+	#mce-error-response,
+	#mce-success-response,
+	#mc_embed_signup div.mce_inline_error{
+	    width: 100%;
+ 		background: none repeat scroll 0 0 #FFFFFF;
+	    border: 1px solid #D1C9B1;
+	    padding: 60px 8px 8px;
+	    position: absolute;
+	    top: 10px;
+	    @include box-shadow(3px 3px 0 rgba(0,0,0,0.1));
+	}
+	#mc_embed_signup div.mce_inline_error{
+		top:-10px;
+	}
+	#mce-error-response a,
+	#mce-success-response a,
+	#mce-error-response a:visited,
+	#mce-success-response a:visited{
+		color:#53262e;
+		text-decoration:underline;
+	}
+
+}
+/*iPads - Portrait*/
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+	svg {width:240px!important}
+
+	.wrap-shift {left:0%}
+
+	.menu-shift {
+		margin-right:-270px; 
+		margin-left:270px;
+		overflow:hidden; 
+		position:absolute
+	}
+
+	.full-wrapper-shift {margin-right:-270px}
+
+	.well {
+		width: auto;
+		margin:0 20px;
+	}
+	#inthebox .well {
+		width: auto !important;
+	}
+
+	.flex-caption {width:50%;}
+
+	#hcarousel {
+		min-width:auto;
+	}
+
+	#promotions{
+		padding-top: 40px;
+		margin-top: 30px;
+		margin-left: 10px;
+	}
+
+	.captionwrap {margin: 10px 0 0 0px}
+
+	#hcarouselcontrols {margin-left: 0px;}
+
+	#promotions {margin-left:0; margin-top:24px}
+
+	#promo-adjacent  {
+		float:right;
+		z-index: 1000;
+		font-size: 18px;
+		width: 45%;
+	}
+
+	.mailinglist input#email {width:160px}
+
+	.socnet {
+		height: 40px;
+		width: 41px;
+		margin-left: 5px;
+	}
+
+	.prodgrid img {height:auto}
+
+
+
+	#inthebox div[class*="itb-p"] {
+		width:25%;
+	}
+
+	#footerwrap {min-width:100%}
+
+	#marsoc {
+		border: 1px solid #d1c9b1;
+		margin: 0;
+		text-align: center; 
+		margin-top:-10px
+	}
+
+	#marsoc .cell {
+		width: auto;
+		clear: both;
+		border: 0;
+		height: auto;
+		float: none;
+		display:block;
+	}
+
+	#marsoc .sp{
+		display:none;
+	}
+
+	#marsoc #socmedia {
+		right: auto;
+		width: 100%; 
+		margin-top: -1em;
+	}
+
+	.mailinglist {
+		white-space: nowrap;
+		width: auto;
+		position: static; 
+		width:90%;
+	}
+
+	#socmedia ul {
+		margin: 0;
+	}
+
+	#marcomm label {
+		font-size: .8em;
+		letter-spacing: 3px;
+		margin-bottom: .4em;
+	}
+
+	#marcomm h1, #marcomm p.serif.ib {
+		margin-left: 0; 
+		background:none;
+	}
+
+	#marcomm p.serif.ib {font-size:.95em}
+
+	#copyright {
+		border-top: 0;
+	}
+
+	.mailinglist input#email {
+		width: 16em;
+	}
+
+	#footerwrap {
+		margin-top: 1em;
+	}
+
+	#footerwrap .row {
+		width: 100%;
+	}
+	.prodname{
+		display:block;
+		padding:4px 0 0;
+		margin-bottom:0;
+		width:auto;
+		white-space: normal;
+	}
+	.prodprice{
+		position:relative;
+		padding-top:0;
+		line-height:15px;
+	}
+
+}

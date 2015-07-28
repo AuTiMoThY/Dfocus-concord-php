@@ -1,0 +1,34 @@
+	.image-preview	{
+		border: solid 1px silver;
+		margin: 2px;
+		background-image: url('./images/no-image.png');
+		min-height: 20px;
+		max-width: 100%;
+	}
+	.image-preview-crop	{
+		background-position: center;
+		background-size: cover;
+	}
+	.html-editor	{
+		width: 100%;
+	}
+
+	.date	{
+		width: 10em;
+		text-align: center;
+	}
+
+	.w5em	{
+		width: 5em;
+	}
+	.w10em	{
+		width: 10em;
+	}
+
+	.inline-block	{
+		display: inline-block;
+	}
+
+	.notice	{
+		color: #FF3366;
+	}

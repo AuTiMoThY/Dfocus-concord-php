@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+.hide_txt {
+	@include hide_txt;
+}
+
+.wrapper {
+	@include wh($cnt_width, 100%);
+	margin: 0 auto;
+	position: relative;
+	@include respondTo(Mobile){
+		width: 100%;
+	};
+	&.small {
+		width: 1000px;
+		@include respondTo(Mobile){
+			width: (1000 / 1200) * 100%;
+			margin: auto;
+		};
+	}
+	&.xs {
+		width: 785px;
+		@include respondTo(Mobile){
+			width: 80%;
+			margin: auto;
+		};
+	}
+}
+
+
+
+.well {
+	width: $cnt_width;
+	margin: auto;
+	position: relative;
+}
+
+html, body {
+	min-height: 100%;
+	min-width: $cnt_width;
+	@include respondTo(Mobile){
+		min-width: 0;
+	};
+}
+
+body {
+	// @include bg('bg.jpg');
+	// @include background-size(cover);
+	// @include bg(scroll);
+	font-family: $normal_font;
+}
+
+
+
+.pic {
+	width: 100%;
+	overflow: hidden;
+	img {
+		@include picImg;
+	}
+}
+
+.temporary {
+	display: block;
+	margin: 0 auto;
+}
+
+.ib {
+	@include ib;
+}
+.col {
+	@include col;
+}
+
+%head {
+	margin-top:0.2em;
+	margin-bottom:0.5em;
+	line-height:1.2125em;
+	letter-spacing:2px;
+}
+@for $i from 1 through 6 {
+	h#{$i} {
+		@extend %head;
+	}
+}
+
+p {
+	line-height:1.6;
+	/*margin-bottom:1.25em;*/
+}
+
+.left{float:left !important;}
+.right{float:right !important;}
+.text-left{text-align:left !important;}
+.text-right{text-align:right !important;}
+.text-center{text-align:center !important;}
+.text-justify{text-align:justify !important;}
+
+.hide, .hidden {display:none;}
+
+
+ul, ol, dl {list-style-position:outside;}
+dl dt{margin-bottom:0.3em;font-weight:bold;}
+dl dd{margin-bottom:0.75em;}
+
+
+.logo-concord {
+	@for $i from 1 through 13 {
+		.p#{$i} {
+			fill: #ED1B23;
+		}
+	}
+}
+
+/*========================================================================*\
+		test
+\*========================================================================*/
+.tdlt {
+	text-decoration: line-through;
+}
+.swing {
+	-webkit-transform-origin: 50% 80%;
+	-ms-transform-origin: 50% 80%;
+	transform-origin: 50% 80%;
+}
+.tri {
+	display: inline-block;
+}
+
+.block_link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: block;
+	@include wh2;
+}
+
+.df-logo {
+	width: 80px;
+	display: inline-block;
+	margin-left: 0.4em;
+}

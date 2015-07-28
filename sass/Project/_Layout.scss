@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+
+
+/*========================================================================*\
+		>>	layout main
+\*========================================================================*/
+main {
+	position: relative;
+	// z-index: 20;
+	margin-top: 0.1em;
+}
+section[class*="row"] {
+	position: relative;
+	z-index: 9;
+	@include bg(#fff);
+	&:not(.fullbg) {
+		@include rhythm-padding(1.5, 1.8);
+	}
+	.cnt {
+		padding-top: 2em;
+		.editorDF {
+			padding: 3.5em 6em;
+			@include bg(#fff);
+			@include respondTo(m){
+				padding: 0.8em 1em;
+			};
+			a {
+				word-wrap: break-word;
+			}
+		}
+		.share_bar {
+			width: 100%;
+			@include bg(#fff);
+			padding: 0 6em 3.5em;
+			@include respondTo(m){
+				padding: 0 1.2em 2em;
+			};
+		}
+	}
+}
+
+.fullbg {
+	width: 100%;
+	overflow: hidden;
+}
+/*========================================================================*\
+		>>	layout 內頁
+\*========================================================================*/
+header.cnt_title {
+	position: relative;
+	z-index: 9;
+	@include bg(#fff);
+	@include rhythm-padding(1.5, 1.8);
+}
+
+.editorDF {
+	img {
+		display: block;
+		margin: auto;
+	}
+	p {
+		line-height: 2.1;
+	}
+}
+
+
+
+.social_share {
+	li {
+		margin-right: 1em;
+	}
+	a {
+		display: block;
+		&:hover {
+			@include bg(rgba(#000, 0.1));
+		}
+		&:active {
+			@include hover;
+		}
+	}
+}
+
+.col-6 {
+	float: left;
+	width: 50%;
+}

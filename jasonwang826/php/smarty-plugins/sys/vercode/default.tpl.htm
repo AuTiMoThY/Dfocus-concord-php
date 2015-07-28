@@ -1,0 +1,12 @@
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<input name="<{$name}>" id="<{$id}>" type="text" value="<{$value}>" placeholder="驗證碼" class="<{$class}>" style="<{$style}><{if $case_sensitive=='N'}>text-transform: uppercase;<{/if}>" size="<{$length}>" maxlength="<{$length}>" autocomplete="off" />
+			<input name="<{$name}>_instance_id" id="<{$id}>_instance_id" type="hidden" value="<{$instance_id}>" autocomplete="off" />
+		</td>
+		<td>&nbsp;</td>
+		<td>
+			<img src="/jasonwang826/images/vercode.php?instance_id=<{$instance_id}>" id="<{$id}>_image"  align="absmiddle" border="0" style="cursor:pointer; border:solid 1px gray; padding:1px;" onclick="this.src='/jasonwang826/images/vercode.php?instance_id=<{$instance_id}>&t='+(new Date().getTime())+Math.random();" title="點選此連結重新產生新的驗證碼" />
+		</td>
+	</tr>
+</table>

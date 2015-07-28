@@ -1,0 +1,56 @@
+<{extends file="../layout.tpl.htm"}>
+<{block name="head-last"}>
+	<link rel="stylesheet" href="/admin/css/edit.css" type="text/css" />
+	<script src="/admin/js/edit.js"></script>
+<{/block}>
+<{block name="content"}>
+  <div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><{$page_title}></h3>
+		</div>
+	</div>
+	
+	<form class="edit" method="post" action="./" enctype="multipart/form-data">
+		<input type="hidden" name="action" value="<{if $smarty.request.action=='new'}>insert<{else}>update<{/if}>" />
+		<input type="hidden" name="id" value="<{$r.id|escape}>" />
+		<div class="row list">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<{if $smarty.request.action=='new'}>新增<{elseif $smarty.request.action=='edit'}>編輯<{/if}><{$page_title}>
+						<div class="pull-right"><a href="./">列表</a></div>
+					</div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<label>圖片上傳</label>
+							<input type="file" name="fpath" class="validate[<{if $smarty.request.action=='new'}>required,<{/if}>custom[image-file]] image-upload" preview-at="fpath">
+							尺寸 : 1920 px * 857 px
+							<div src="<{$r.fpath|escape}>" id="fpath" class="image-preview image-preview-crop" width="960" height="429"></div>
+						</div>
+
+						<div class="form-group">
+							<label>連結</label>
+							<input type="text" name="link" value="<{$r.link}>" class="form-control validate[required]">
+						</div>
+
+						<div class="form-group">
+							<label>排序</label>
+							<div class="ord" name="ord" maxOrd="<{$maxOrd}>" value="<{$r.ord|escape}>"></div>
+						</div>
+
+						<div class="form-group">
+							<label>是否顯示</label>
+							<label class="radio-inline"><input type="radio" name="enable" value="Y"<{if $r.enable=='Y'}> checked<{/if}>>是</label>
+							<label class="radio-inline"><input type="radio" name="enable" value="N"<{if $r.enable=='N'}> checked<{/if}>>否</label>
+						</div>
+			
+						<button type="submit" class="btn btn-success">確認修改</button>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</form>
+<{/block}>

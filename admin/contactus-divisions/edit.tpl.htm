@@ -1,0 +1,80 @@
+<{extends file="../layout.tpl.htm"}>
+<{block name="head-last"}>
+	<link rel="stylesheet" href="/admin/css/edit.css" type="text/css" />
+	<script src="/admin/js/edit.js"></script>
+	<script src="<{$smarty.server.JASONWANG826_CONFIG.CKEDITOR_ALIAS}>/standard/ckeditor.js"></script>
+	<script src="<{$smarty.server.JASONWANG826_CONFIG.CKEDITOR_ALIAS}>/standard/adapters/jquery.js"></script>
+<{/block}>
+<{block name="content"}>
+  <div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><{$page_title}></h3>
+		</div>
+	</div>
+	
+	<form class="edit" method="post" action="./" enctype="multipart/form-data">
+		<input type="hidden" name="action" value="<{if $smarty.request.action=='new'}>insert<{else}>update<{/if}>" />
+		<input type="hidden" name="id" value="<{$r.id|escape}>" />
+		<div class="row list">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						回覆<{$page_title}>
+						<div class="pull-right"><a href="./">列表</a></div>
+					</div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<label>事業類別</label>
+							<div><{$r.src}></div>
+						</div>
+
+						<div class="form-group">
+							<label>留言者姓名</label>
+							<div><{$r.name}></div>
+						</div>
+
+						<div class="form-group">
+							<label>發問時間</label>
+							<div><{$r.cdate|date_format:'%Y/%m/%d %H:%M'}></div>
+						</div>
+
+						<div class="form-group">
+							<label>留言者email</label>
+							<div><{mailto address=$r.email}></div>
+						</div>
+
+						<div class="form-group">
+							<label>聯絡電話</label>
+							<div><{$r.telno}></div>
+						</div>
+
+						<div class="form-group">
+							<label>問題或建議類別</label>
+							<div><{$r.category}></div>
+						</div>
+
+						<div class="form-group">
+							<label>內文</label>
+							<div><{$r.content|nl2br}></div>
+						</div>
+
+						<div class="form-group">
+							<div><label>回覆</label></div>
+							<textarea name="reply" rows="8" class="form-control"><{$r.reply|escape}></textarea>
+						</div>
+
+						<div class="form-group">
+							<label>回覆時間</label>
+							<div><{$r.reply_date|date_format:'%Y/%m/%d %H:%M'}></div>
+						</div>
+
+						<button type="submit" class="btn btn-success">確認修改</button>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</form>
+<{/block}>

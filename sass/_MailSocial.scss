@@ -1,0 +1,164 @@
+#marsoc{
+  display:table;
+  margin-top: 6em;
+  width:100%;
+  .cell {
+  	border: 1px solid #d1c9b1;
+  }
+}
+#socmedia {
+	ul {
+		margin: 17px auto 14px 15px; 
+	}
+	li {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.txt1 {
+		height: 46px;
+		padding-top: 5px;
+		margin-bottom: 0;
+		/*font*/
+		color: $normal_color;
+		font-size: $fz-N;
+		text-align: center;
+		line-height: 1.5em;
+		letter-spacing: 1px;
+	}
+}
+#email::-webkit-input-placeholder {
+  color: #a1905e; }
+
+#email:-moz-placeholder {
+  color: #a1905e; }
+
+/* Firefox 18- */
+#email::-moz-placeholder {
+  color: #a1905e; }
+
+/* Firefox 19+ */
+#email:-ms-input-placeholder {
+  color: #a1905e; }
+
+#email:input-placeholder {
+  color: #a1905e; }
+
+
+
+/*=====================
+MARCOMM
+=====================*/
+#marcomm {
+	h1, &>p, .mailinglist {
+		display:table-cell;
+		vertical-align:middle;
+	}
+	.mailinglist{
+		text-align:center;
+	}
+	h1 {
+		width: 22%;
+		margin-left: 0.5em;
+		margin-right: 1%;
+		text-align: left;
+	}
+	p.serif.ib {
+		width: 39%;
+		line-height: 1.5em;
+		margin:0;
+	}
+	label {
+		margin: 0;
+		color: #d9774d;
+		font-size: 14px;
+		font-family: $ff-Verdana;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 1.3em;
+		letter-spacing: 2px;
+	}
+	p {
+		color: #a0a0a0;
+		font-size: $fz-N;
+		line-height: 1.2em;
+		letter-spacing: 1px;
+	}
+}
+.mailinglist {
+	width: 39%;
+	white-space: nowrap;
+	position: relative;
+	p {
+		margin: 0;
+		text-align:right;
+		position:relative;
+	}
+	p, input {
+		display: inline-block;
+	}
+	input#email {
+		@include wh(200px, 40px);
+		border: 1px solid #d1c9b1;
+		padding: 11px 8px 8px 8px;
+		margin-right:-4px;
+		vertical-align: top;
+		position:relative;
+		z-index:5;
+		@include border-radius(0);		
+		color: #9a6d2d;
+		line-height: 1;
+	}
+	input[type="submit"] {
+		@include wh(40px);
+		margin: 0;
+		padding: 0;
+		border: 1px solid #d1c9b1;
+		border-left: 0;
+		background-color: transparent;
+		@include box-shadow(2px 2px 0px rgba(0,0,0,0.08));
+		/*font*/
+		color: $normal_color;
+		font-size: 11px;
+		letter-spacing:.08em;
+		&:hover {
+			background-color: rgba(135, 184, 177, 0.6);
+		}
+	}
+	form {
+		height: 40px;
+		margin: 0;
+		position: relative;
+	}
+}
+.joinwrap {
+    position:relative;
+    display:inline-block;
+}
+.joinwrap:before {
+    content: url('../images/join-sm.png');
+    display: block;
+    height: auto;
+    position: absolute;
+    z-index: 10;
+    right: -19;
+    top: -9px;
+    width: 51px;
+}
+
+/*-----------------------
+Social network icons
+-----------------------*/
+.socnet {
+	background: transparent url('../images/socnets.png') no-repeat 0 -2px;
+	height: 46px;
+	width: 40px;
+	margin-left: 3px;
+	@include opacity(0.8);
+	&:hover {
+		@include opacity(1);
+	}
+}
+.fb {
+  background-position: -69px -2px
+}

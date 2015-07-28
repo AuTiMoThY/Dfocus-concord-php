@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+input[type="text"],
+input[type="password"],
+input[type="email"], 
+input[type="telephone"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+	// display:block;
+	// max-width:500px;
+	// height: 30px;
+	// height:2em;
+	height:2.3125em;
+	width:100%;
+	padding:0.5em 0.8em;
+	/*margin:0 0 1em 0;*/
+	// padding:4px 0;
+	background-color: #f4f4f4;
+	border: 1px solid $bd_color2;
+	// border:1px solid #ccc;
+	color:#303030;
+	// text-indent:8px;
+	@include box-shadow(inset 1px 1px 5px 0px rgba(0,0,0,0.4));
+	// -webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
+	// box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
+	// color:rgba(0,0,0,0.75);
+	font-size:0.875em;
+	// font-family:inherit;
+
+	-webkit-transition:all 0.45s ease-in-out;
+	-moz-transition:all 0.45s ease-in-out;
+	transition:all 0.45s ease-in-out;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus, 
+input[type="telephone"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus{
+	-webkit-box-shadow:0 0 5px #999;
+	-moz-box-shadow:0 0 5px #999;
+	box-shadow:0 0 5px #999;
+	border-color:#999;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus, 
+input[type="telephone"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus{
+	background:#fafafa;border-color:#999;outline:none;
+}
+input[type="text"][disabled],input[type="email"]:focus,input[type="telephone"]:focus,input[type="password"][disabled],input[type="date"][disabled],input[type="datetime"][disabled],input[type="datetime-local"][disabled],input[type="month"][disabled],input[type="week"][disabled],input[type="email"][disabled],input[type="number"][disabled],input[type="search"][disabled],input[type="tel"][disabled],input[type="time"][disabled],input[type="url"][disabled],textarea[disabled]{
+	background-color:#ddd;
+}
+
+
+form input[type="text"], 
+form input[type="email"], 
+form input[type="password"],
+form input[type="telephone"],
+form textarea {
+
+}
+
+input, textarea, select {
+	color: #303030;
+}
+
+select {
+	// max-width:500px;
+	// height: 30px;
+	height:2em;
+	background:#f4f4f4;
+	border:1px solid $bd_color2;
+	// padding:4px 0;
+	// text-indent:8px;
+	// @include box-shadow(inset 1px 1px 5px 0px rgba(0,0,0,0.4));
+	@include box-shadow(none);
+	margin: 0;
+	color:#303030;
+}
