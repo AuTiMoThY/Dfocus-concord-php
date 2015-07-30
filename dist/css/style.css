@@ -226,6 +226,10 @@ dl dd {
   text-decoration: line-through;
 }
 
+.tdu {
+  text-decoration: underline;
+}
+
 .swing {
   -webkit-transform-origin: 50% 80%;
   -ms-transform-origin: 50% 80%;
@@ -3306,91 +3310,91 @@ header.chatroom {
 }
 
 .about-character1.character-pic:before {
-  background-position: 15% 14%;
+  background-position: 19% 100%;
 }
 
 .index-character1.character-pic:before {
-  background-position: 75% 48%;
+  background-position: 16% 71%;
 }
 
 .about-character2.character-pic:before {
-  background-position: 12% 43%;
+  background-position: 51% 53%;
 }
 
 .index-character2.character-pic:before {
-  background-position: 22% 35%;
+  background-position: 53% 89%;
 }
 
 .about-character3.character-pic:before {
-  background-position: 68% 33%;
+  background-position: 4% 64%;
 }
 
 .index-character3.character-pic:before {
-  background-position: 56% 68%;
+  background-position: 21% 33%;
 }
 
 .about-character4.character-pic:before {
-  background-position: 76% 36%;
+  background-position: 65% 55%;
 }
 
 .index-character4.character-pic:before {
-  background-position: 49% 41%;
+  background-position: 12% 64%;
 }
 
 .about-character5.character-pic:before {
-  background-position: 64% 67%;
+  background-position: 60% 59%;
 }
 
 .index-character5.character-pic:before {
-  background-position: 58% 41%;
+  background-position: 85% 22%;
 }
 
 .about-character6.character-pic:before {
-  background-position: 7% 82%;
+  background-position: 54% 57%;
 }
 
 .index-character6.character-pic:before {
-  background-position: 70% 34%;
+  background-position: 3% 41%;
 }
 
 .about-character7.character-pic:before {
-  background-position: 30% 26%;
+  background-position: 99% 31%;
 }
 
 .index-character7.character-pic:before {
-  background-position: 25% 87%;
+  background-position: 65% 82%;
 }
 
 .about-character8.character-pic:before {
-  background-position: 50% 60%;
+  background-position: 87% 42%;
 }
 
 .index-character8.character-pic:before {
-  background-position: 92% 82%;
+  background-position: 76% 31%;
 }
 
 .about-character9.character-pic:before {
-  background-position: 75% 1%;
+  background-position: 5% 40%;
 }
 
 .index-character9.character-pic:before {
-  background-position: 65% 19%;
+  background-position: 42% 20%;
 }
 
 .about-character10.character-pic:before {
-  background-position: 28% 84%;
+  background-position: 65% 47%;
 }
 
 .index-character10.character-pic:before {
-  background-position: 83% 21%;
+  background-position: 80% 72%;
 }
 
 .about-character11.character-pic:before {
-  background-position: 34% 57%;
+  background-position: 6% 3%;
 }
 
 .index-character11.character-pic:before {
-  background-position: 86% 53%;
+  background-position: 34% 81%;
 }
 
 .character-pic img {
@@ -3694,7 +3698,7 @@ header.chatroom {
 		>	font & icon
 \*========================================================================*/
 .txtImg_title-sprite, .txtImg_title-title-MemberProfile, .txtImg_title-title-chatroom, .txtImg_title-title-concordInf, .txtImg_title-title-contact, .txtImg_title-title-cp, .txtImg_title-title-cp2, .txtImg_title-title-cpComputer1, .txtImg_title-title-cpComputer2, .txtImg_title-title-cpComputer3, .txtImg_title-title-download, .txtImg_title-title-futures1, .txtImg_title-title-futures2, .txtImg_title-title-futures3, .txtImg_title-title-index_row1, .txtImg_title-title-lu, .txtImg_title-title-map, .txtImg_title-title-monthlyreport, .txtImg_title-title-news, .txtImg_title-title-prodCnt, .txtImg_title-title-qa, .txtImg_title-title-sales1, .txtImg_title-title-sales2, .txtImg_title-title-saleschannel, .txtImg_title-title-search, .txtImg_title-title-service1, .txtImg_title-title-service2, .txtImg_title-title-service3, .txtImg_title-title-service4, .txtImg_title-title-solution, .txtImg_title-title-team, .txtImg_title-title-team2 {
-  background-image: url('../images/txtImg_title-s33d8569255.png');
+  background-image: url('../images/txtImg_title-se441321828.png');
   background-repeat: no-repeat;
 }
 
@@ -3852,7 +3856,7 @@ header.chatroom {
 }
 
 .txtImg_title-title-team {
-  width: 410px;
+  width: 438px;
   height: 91px;
   margin: auto;
 }
@@ -3982,7 +3986,7 @@ header.chatroom {
   background-image: none;
 }
 .txtImg_title-title-futures2 {
-  width: 296px;
+  width: 426px;
   height: 96px;
   margin: auto;
 }

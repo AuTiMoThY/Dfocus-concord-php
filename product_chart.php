@@ -19,6 +19,23 @@
  ?>
 
 <link rel="stylesheet" href="amstockchart/amcharts/style.css" type="text/css">
+<style>
+.amChartsButton, .amChartsButtonSelected {
+	padding: 0.3em 0.8em;
+	margin-left: 0.6em;
+}
+.amChartsButton:hover, .amChartsButtonSelected:hover {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.amChartsButton:active, .amChartsButtonSelected:active {
+	-webkit-transform: translate(1px, 1px);
+	   -moz-transform: translate(1px, 1px);
+	    -ms-transform: translate(1px, 1px);
+	     -o-transform: translate(1px, 1px);
+	        transform: translate(1px, 1px);
+}
+</style>
 <script src="amstockchart/amcharts/amcharts.js" type="text/javascript"></script>
 <script src="amstockchart/amcharts/serial.js" type="text/javascript"></script>
 <script src="amstockchart/amcharts/amstock.js" type="text/javascript"></script>
@@ -256,7 +273,7 @@ AmCharts.ready(function() {
     chart.pathToImages = "amstockchart/amcharts/images/";
 	chart.dateFormat = "YYYY-MM-DD";
 	chart.addClassNames = true;
-	chart.categoryField = "year";
+	// chart.categoryField = "year";
 
 	//	撈資料可參考:
 	//	1.amstockchart\tutorial_assets_external-data
@@ -266,9 +283,9 @@ AmCharts.ready(function() {
     var dataSet = new AmCharts.DataSet();
     dataSet.color = "#c3c3c3";
     dataSet.dataProvider = chartData;
-    dataSet.fieldMappings = [{fromField:"val", toField:"value"},{fromField:"dateCol", toField:"dateCol"}];
+    dataSet.fieldMappings = [{fromField:"val", toField:"value"}];
     dataSet.categoryField = "date";
-    dataSet.dateFormat = "YYYY-MM-DD";
+    // dataSet.dateFormat = "YYYY-MM-DD";
     chart.dataSets = [dataSet];
 
 	// PANELS ///////////////////////////////////////////
@@ -291,7 +308,7 @@ AmCharts.ready(function() {
 	graph1.bulletBorderColor = "#CE7077";
 	graph1.bulletBorderAlpha = 1;
 	graph1.bulletBorderThickness = 3;
-	graph1.balloonText = "[[dateCol]]:<div style='margin-bottom:30px;text-shadow: 2px 2px rgba(0, 0, 0, 0.1); font-weight:200;font-size:30px; color:#000'>[[value]]</div>";
+	graph1.balloonText = "[[category]]:<div style='margin-bottom:30px;text-shadow: 2px 2px rgba(0, 0, 0, 0.1); font-weight:200;font-size:30px; color:#000'>[[value]]</div>";
 	graph1.comparable = true;
 	graph1.compareField = "value";
 	graph1.compareGraphBalloonText = "淨值:<b>[[value]]</b>";
@@ -302,7 +319,7 @@ AmCharts.ready(function() {
 	var stockLegend1 = new AmCharts.StockLegend();
 	stockLegend1.valueTextRegular = "[[value]]";
 	// stockLegend1.markerType = "none";
-	stockLegend1.periodValueTextComparing =  "[[percents.value.close]]%";
+	// stockLegend1.periodValueTextComparing =  "[[percents.value.close]]%";
 	stockLegend1.periodValueTextRegular =  "[[value]]";
 	stockPanel1.stockLegend = stockLegend1;
 
@@ -315,7 +332,7 @@ AmCharts.ready(function() {
 	categoryAxis.startOnAxis = true;
 	categoryAxis.tickLength = 0;
 	categoryAxis.parseDates = true;
-	categoryAxis.minPeriod = "YYYY-MM-DD";
+	// categoryAxis.minPeriod = "YYYY-MM-DD";
 	chart.chartCategoryAxis = categoryAxis;
 
 
@@ -331,7 +348,7 @@ AmCharts.ready(function() {
 	chartCursor.cursorColor = "#FFFFFF";
 	chartCursor.categoryBalloonColor = "#8d83c8";
 	chartCursor.fullWidth = true;
-	chartCursor.categoryBalloonDateFormat = "YYYY";
+	// chartCursor.categoryBalloonDateFormat = "YYYY";
 	chartCursor.balloonPointerOrientation = "vertical";
 	chart.chartCursor = chartCursor;
 
@@ -352,16 +369,20 @@ AmCharts.ready(function() {
 
     // 
     var periodSelector = new AmCharts.PeriodSelector();
-    periodSelector.periods = [{period:"MM", count:1, label:"1 month"},
-                              {period:"YYYY", count:1, label:"1 year"},
-                              {period:"YTD", label:"YTD"},
-                              {period:"MAX", label:"MAX"}];
+    periodSelector.periods = [{period:"MM", count:1, label:" 1 個月 "},
+                              {period:"MM", count:6, label:" 半 年 "},
+                              {period:"YYYY", count:1, label:" 1 年 "},
+                              {period:"YTD", label:" YTD "},
+                              {period:"MAX", label:" ALL "}];
+    periodSelector.fromText = " 從 ";
+    periodSelector.toText = " 到 ";
 	periodSelector.dateFormat = "YYYY-MM-DD";
     chart.periodSelector = periodSelector;
 
 
     chart.write("chartdiv");
 });  
+
 
 </script>
 <?php
