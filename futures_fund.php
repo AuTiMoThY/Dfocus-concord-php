@@ -139,7 +139,7 @@
 								<img src="<?php path_au('img'); ?>pic2_1.jpg" alt="">
 							</div>
 						</a></figure>
-						<p class="txt-ff1 txt-1 text-center">Futures Fund</p>
+						<p class="txt-ff1 txt-1 text-center">Futures Trust Fund</p>
 						<p class="txt-ff1 txt-1 text-center">期貨信託事業</p>
 					</li>
 					<li class="futures-item">

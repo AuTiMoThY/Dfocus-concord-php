@@ -157,7 +157,7 @@ if ($deviceType == 'phone') {
 								<!-- <p class="futures-item-intro txt-2">國內期貨信託事業係以向不特定人或符合主管機關所定資格條件之人募集期貨信託基金發行受益憑證，並運用期貨信託基金從事交易或投資之事業。聚集更多的小額資金，配合專業穩健的研究投資團隊，為廣大投資人進行審慎與安全的期貨交易，提供一個可參與國內外期貨市場的管道。</p> -->
 							</figcaption>
 						</a></figure>
-						<p class="txt-ff1 txt-1">Futures Fund</p>
+						<p class="txt-ff1 txt-1">Futures Trust Fund</p>
 						<p class="txt-ff1 txt-1">期貨信託事業</p>
 					</li>
 					<li class="futures-item">
@@ -190,7 +190,7 @@ if ($deviceType == 'phone') {
 			<div id="charMarquee" class="character-caroul">
 				<?php
 					$team = new JTTeam();
-					$rsTeam = $team->all(3);
+					$rsTeam = $team->all();
 				?>
 				<ul class="character-caroul-list cf">
 				<?php foreach ($rsTeam as $d) { ?>
@@ -427,6 +427,8 @@ $(function() {
 	var $charMarquee = $("#charMarquee");
 	var charMarqueeH = $charMarquee.outerHeight();
 	var charLength = $("#charMarquee li").length;
+	var viewPortWH = viewPortWidthHeight(),
+		viewPortW = viewPortWH.width;
 	console.log(charLength);
 	$("#marquee_prev_btn").css({
 		top: (charMarqueeH-100)/2
@@ -441,20 +443,31 @@ $(function() {
 			display: 'table',
 			margin: 'auto'
 		});
-	};
+	}
+	if (charLength<=5 && viewPortW<=1366) {
+		console.log("run");
+		$(".character-caroul-ctrl").show();
+		$("ul.character-caroul-list").css({
+			width: '',
+			display: '',
+			margin: ''
+		});
+	}
 
- //     var dis = $('.character-item').outerHeight();
- //     $("#charMarquee").scrollbox({
- //               // distance: dis,
- //               speed: 60,
- //               direction: 'h'
- //          })
- //     $('#marquee_prev_btn').click(function () {
- //          $('#charMarquee').trigger('backward');
- //     });
- //     $('#marquee_next_btn').click(function () {
- //          $('#charMarquee').trigger('forward');
- //     });
+     // var dis = $('.character-item').outerHeight();
+     $("#charMarquee").scrollbox({
+               // distance: dis,
+               speed: 60,
+               direction: 'h',
+               infiniteLoop: false,
+               autoPlay: false
+          })
+     $('#marquee_prev_btn').click(function () {
+          $('#charMarquee').trigger('backward');
+     });
+     $('#marquee_next_btn').click(function () {
+          $('#charMarquee').trigger('forward');
+     });
 
      // $("#netAssetValuePanel").hide();
     $("#netAssetValueBtn").click(function() {

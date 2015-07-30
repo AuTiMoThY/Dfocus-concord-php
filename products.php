@@ -48,7 +48,7 @@
 			<ul class="chatroom-list cf">
 				<li class="chatroom-item pdt-item" style="min-height:auto;"><a href="products_list1.php">
 					<header class="text-center">
-						<h1 class="txt-3" data-lang="en" style="margin-bottom:0;">Futures Fund</h1>
+						<h1 class="txt-3" data-lang="en" style="margin-bottom:0;">Futures Trust Fund</h1>
 						<h2 class="txt-3_2" data-lang="tw" style="margin-top:0;">基金</h2>
 					</header>
 					<div class="chatroom-pic pic" style="padding-bottom:0;height:auto;">

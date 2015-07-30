@@ -71,8 +71,8 @@
 				<img src="<?php //path_au('img'); ?>title-prodCnt.png" alt="" class="temporary">
 			</h2> -->
 			<hgroup>
-				<h1 class="pdt-title txt-3 text-center"><?php echo $pdt_title; ?></h1>
-				<h2 class="pdt-subtitle txt-4 text-center"><?php echo $pdt_subtitle; ?></h2>
+				<h1 class="pdt-title txt-3 text-center"><?php echo $pdt_subtitle; ?></h1>
+				<h2 class="pdt-subtitle txt-4 text-center"><?php echo $pdt_title; ?></h2>
 <!-- 				<h1 class="pdt-title txt-3 text-center">Futures Fund</h1>
 				<h2 class="pdt-subtitle txt-4 text-center">多空成長期貨信託基金</h2>
  -->			</hgroup>

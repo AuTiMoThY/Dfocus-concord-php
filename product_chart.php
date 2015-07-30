@@ -209,7 +209,22 @@ AmCharts.loadJSON = function(url) {
 								<td>基金經理人</td>
 								<td>林豪威</td>
 							</tr>
+							<tr>
+								<td>經理費</td>
+								<td>2.5%</td>
+							</tr>
+							<tr>
+								<td>保管費</td>
+								<td>0.2%</td>
+							</tr>
+							<tr>
+								<td>手續費</td>
+								<td>不超過2%</td>
+							</tr>
 						</table>
+					</div>
+					<div class="txt-1_4 txt-r1">
+						※本基金操作績效扣除經理費後之正報酬按『高水位法』收取超額部分之20%績效費，詳細內容請參閱公開說明書。
 					</div>
 				</div>
 			</div>
