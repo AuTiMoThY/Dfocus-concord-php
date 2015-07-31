@@ -196,12 +196,12 @@ $(function() {
 	});
 
 	var getTab = location.hash.substr(0);
-	var showTab = location.hash.substr(4);
 	if (getTab=="") {
 		getTab = "#tab1";
 	}else{
 		getTab = location.hash.substr(0);
 	};
+	var showTab = getTab.substr(4);
 
 	if (getTab != -1) {
 		$('ul.tabs li').eq(showTab-1).addClass('active').siblings('.active').removeClass('active');

@@ -1,4 +1,5 @@
 <?php 
+
 require_once 'jasonwang826/jasonwang826.inc';
 require_once 'plugin/mobiledetect/Mobile_Detect.php';
 $detect = new Mobile_Detect;
@@ -26,7 +27,9 @@ define('INC_PATH', 'dist/inc/');
 define('CSS_PATH', 'dist/css/');
 define('JS_PATH', 'dist/js/');
 
-$webTitle = '康和期貨經理事業';
+$sysvar = new JTSysvar();
+$webTitle = htmlspecialchars($sysvar->get('web.header.title'));
+//	$webTitle = '康和期貨經理事業';
 
 function path_au($what) {
 	switch ($what) {

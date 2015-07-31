@@ -32,11 +32,12 @@
 	// 總頁數
 	$maxPage = $pager->pageNum;
 
+/*
 	if ($p>$maxPage || $p<1 || !is_int($p*1) || !isset($_GET["p"])) {
 		$p = 1;
 		header("Location: monthlyreport.php?p={$p}");
 	}
-
+*/
 ?>
 <title>投資月報 | <?php echo $webTitle; ?></title>
 
@@ -96,7 +97,7 @@
 						<input type="hidden" name="p" value="1" />
 						<div class="col-2">
 							<span class="txt-1">分類</span>
-							<select name="group_id" id="" class="monthlyreport-select">
+							<select name="group_id" class="monthlyreport-select" onchange="location='monthlyreport.php?group_id='+$(this).val();">
 								<option value="">所有</option>
 								<?php
 									foreach( $rsGroup as $d ) {

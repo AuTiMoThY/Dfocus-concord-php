@@ -25,7 +25,7 @@
 				FROM `{$this->table}`
 				WHERE `enable`='Y'
 					AND `category`=:category
-				ORDER BY `ord` DESC";
+				ORDER BY `ord` ASC";
 			$rs = parent::$db->queryFetchAll( $sql, array(':category'=>$category) );
 			return $rs;
 		}

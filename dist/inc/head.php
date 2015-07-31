@@ -1,6 +1,9 @@
+<?php
+	if(!isset($sysvar))	$sysvar = new JTSysvar();
+?>
 <!-- <meta name="title" content="" /> -->
-<meta name="keywords" content=""><!-- 關鍵字 -->
-<meta name="description" content="" /><!-- 網站描述 -->
+<meta name="keywords" content="<?=htmlspecialchars($sysvar->get('web.header.keyword'))?>"><!-- 關鍵字 -->
+<meta name="description" content="<?=htmlspecialchars($sysvar->get('web.header.description'))?>" /><!-- 網站描述 -->
 <meta name="Copyright" content="" /><!-- 版權宣告 -->
 <meta name="robots" content="index,follow">
 

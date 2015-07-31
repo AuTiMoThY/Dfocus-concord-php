@@ -16,7 +16,7 @@
 		";
 	$rowPerPage = $shownum;
 	$pageNo = $p-1;
-	$arrOrderBy = isset($_GET['_orderBy']) ? $_GET['_orderBy'] : array('`advisory`.`ord` DESC', '`advisory`.`id` DESC');
+	$arrOrderBy = isset($_GET['_orderBy']) ? $_GET['_orderBy'] : array('`advisory`.`ord` ASC', '`advisory`.`id` DESC');
 	$pager = $db->queryFetchPage( $sql, $pageNo, $shownum, $arrOrderBy );
 
 	$start = ($p-1)*$shownum;
