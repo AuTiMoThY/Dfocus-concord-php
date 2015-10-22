@@ -29,15 +29,15 @@ html {
 
 @font-face {
   font-family: "FutuLt";
-  src: url('fonts/FuturaBT-Light.eot?1438219983') format('embedded-opentype'), url('fonts/FutuLt.ttf?1438219984') format('truetype'), url('fonts/FutuLt.woff?1438219983') format('woff');
+  src: url('fonts/FuturaBT-Light.eot?1438334411') format('embedded-opentype'), url('fonts/FutuLt.ttf?1438334412') format('truetype'), url('fonts/FutuLt.woff?1438334412') format('woff');
 }
 @font-face {
   font-family: "MHeiHK";
-  src: url('fonts/MHeiHK-Light-Roman.eot?1438219977') format('embedded-opentype'), url('fonts/MHeiHK-Light-Roman.ttf?1438219953') format('truetype'), url('fonts/MHeiHK-Light-Roman.woff?1438219948') format('woff'), url('fonts/MHeiHK-Light-Roman.svg?1438219972') format('svg');
+  src: url('fonts/MHeiHK-Light-Roman.eot?1438334406') format('embedded-opentype'), url('fonts/MHeiHK-Light-Roman.ttf?1438334381') format('truetype'), url('fonts/MHeiHK-Light-Roman.woff?1438334377') format('woff'), url('fonts/MHeiHK-Light-Roman.svg?1438334401') format('svg');
 }
 @font-face {
   font-family: "MyriadProLight";
-  src: url('fonts/MyriadPro-Light.eot?1438219934') format('embedded-opentype'), url('fonts/MyriadPro-Light.ttf?1438219932') format('truetype'), url('fonts/MyriadPro-Light.woff?1438219931') format('woff'), url('fonts/MyriadPro-Light.svg?1438219937') format('svg');
+  src: url('fonts/MyriadPro-Light.eot?1438334363') format('embedded-opentype'), url('fonts/MyriadPro-Light.ttf?1438334361') format('truetype'), url('fonts/MyriadPro-Light.woff?1438334360') format('woff'), url('fonts/MyriadPro-Light.svg?1438334366') format('svg');
 }
 /*------------------------------------------------------------------------*\
 /*------------------------------------------------------------------------*\
@@ -420,7 +420,7 @@ header.cnt_title {
 .pages_btn li.prev .icon {
   width: 14px;
   height: 28px;
-  background: url('../images/iconTxt.png?1438220084') -15px -59px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -59px no-repeat;
   margin-right: 1em;
 }
 .pages_btn li.prev:hover {
@@ -430,7 +430,7 @@ header.cnt_title {
   color: #000;
 }
 .pages_btn li.prev:hover .icon {
-  background: url('../images/iconTxt.png?1438220084') -15px -30px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -30px no-repeat;
 }
 .pages_btn li.next {
   width: auto;
@@ -450,7 +450,7 @@ header.cnt_title {
 .pages_btn li.next .icon {
   width: 14px;
   height: 28px;
-  background: url('../images/iconTxt.png?1438220084') -15px -117px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -117px no-repeat;
   margin-left: 1em;
 }
 .pages_btn li.next:hover {
@@ -460,7 +460,7 @@ header.cnt_title {
   color: #000;
 }
 .pages_btn li.next:hover .icon {
-  background: url('../images/iconTxt.png?1438220084') -15px -88px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -88px no-repeat;
 }
 .pages_btn .page_select {
   width: auto;
@@ -556,7 +556,7 @@ button.btn {
   display: inline-block;
   width: 14px;
   height: 28px;
-  background: url('../images/iconTxt.png?1438220084') -15px -30px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -30px no-repeat;
   vertical-align: -0.5ex;
   margin-right: 0.45em;
 }
@@ -570,7 +570,7 @@ button.btn {
   display: inline-block;
   width: 14px;
   height: 28px;
-  background: url('../images/iconTxt.png?1438220084') -15px -30px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -30px no-repeat;
   vertical-align: -0.5ex;
   margin-right: 0.45em;
 }
@@ -591,14 +591,14 @@ button.btn {
 .btn-goPrev {
   width: 14px;
   height: 28px;
-  background: url('../images/iconTxt.png?1438220084') -15px -146px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -146px no-repeat;
   padding: 0;
   margin: 0;
 }
 .btn-goNext {
   width: 14px;
   height: 28px;
-  background: url('../images/iconTxt.png?1438220084') -15px -175px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -175px no-repeat;
   padding: 0;
   margin: 0;
 }
@@ -611,7 +611,7 @@ button.btn {
   display: inline-block;
   width: 14px;
   height: 14px;
-  background: url('../images/iconTxt.png?1438220084') 0px 0px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') 0px 0px no-repeat;
   margin-right: 1.2em;
 }
 .btn-goComputer.btn {
@@ -629,7 +629,7 @@ button.btn {
   right: 0px;
   width: 14px;
   height: 28px;
-  background: url('../images/iconTxt.png?1438220084') -15px -88px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -88px no-repeat;
 }
 .cp_computer-intro .btn-goComputer.btn:hover {
   box-shadow: none !important;
@@ -649,7 +649,7 @@ button.btn {
   right: 0px;
   width: 15px;
   height: 29px;
-  background: url('../images/iconTxt.png?1438220084') -15px 0px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px 0px no-repeat;
 }
 .btn-pdtMore.btn:hover {
   box-shadow: none !important;
@@ -675,7 +675,7 @@ button.btn {
   right: 8px;
   width: 14px;
   height: 28px;
-  background: url('../images/iconTxt.png?1438220084') -15px -175px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px -175px no-repeat;
 }
 .btn-gochatroomCnt.btn:hover {
   box-shadow: none !important;
@@ -689,7 +689,7 @@ button.btn {
 .btn-goindex {
   width: 55px;
   height: 63px;
-  background: url('../images/iconTxt.png?1438220084') -31px -60px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -31px -60px no-repeat;
 }
 .btn-goindex.btn {
   padding: 0;
@@ -900,7 +900,7 @@ header.global_hd {
   z-index: 50;
   width: 100%;
   height: 90px;
-  background: url('../images/bg-header.png?1438220147') 50% 50% no-repeat;
+  background: url('../images/bg-header.png?1438334577') 50% 50% no-repeat;
   background-size: cover;
   padding: 0 1em;
 }
@@ -956,7 +956,7 @@ header#logo a {
     left: 0;
     width: 100%;
     height: auto;
-    background: url('../images/bg-header.png?1438220147') 50% 50% repeat-y;
+    background: url('../images/bg-header.png?1438334577') 50% 50% repeat-y;
     display: none;
   }
   .main_nav.js-nav_open {
@@ -1021,7 +1021,7 @@ header#logo a {
 .main_nav li.quick_bar .login a {
   width: 80px;
   height: 16px;
-  background: url('../images/txts.png?1438219985') 0px -85px no-repeat;
+  background: url('../images/txts.png?1438334414') 0px -85px no-repeat;
   margin: auto;
 }
 .main_nav a {
@@ -1089,7 +1089,7 @@ header#logo a {
   position: relative;
   z-index: 80;
   float: none;
-  background: url('../images/bg-header.png?1438220147') 100% 50% no-repeat;
+  background: url('../images/bg-header.png?1438334577') 100% 50% no-repeat;
 }
 .subNav .padding {
   position: absolute;
@@ -1596,7 +1596,7 @@ div.tab_container h2 {
 .index_page .row1 {
   position: relative;
   height: 548px;
-  background: url('../images/bg-index-row1.jpg?1438220148') 50% 50% no-repeat;
+  background: url('../images/bg-index-row1.jpg?1438334578') 50% 50% no-repeat;
   background-size: cover;
 }
 .index_page .row1 .xs {
@@ -1625,7 +1625,7 @@ div.tab_container h2 {
 }
 .index_page .row4 {
   height: auto;
-  background: url('../images/bg-index-row4.jpg?1438220143') 50% 50% no-repeat;
+  background: url('../images/bg-index-row4.jpg?1438334573') 50% 50% no-repeat;
   background-size: cover;
   padding: 4em 0;
 }
@@ -1642,7 +1642,7 @@ div.tab_container h2 {
   display: inline-block;
   width: 15px;
   height: 29px;
-  background: url('../images/iconTxt.png?1438220084') -15px 0px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -15px 0px no-repeat;
   vertical-align: -0.5ex;
   margin-left: 0.45em;
 }
@@ -1829,7 +1829,7 @@ div.tab_container h2 {
   width: 100%;
   height: 0;
   padding-bottom: 52.08333%;
-  background: url('../images/bg-about-row4.jpg?1438220151') 50% 50% no-repeat;
+  background: url('../images/bg-about-row4.jpg?1438334581') 50% 50% no-repeat;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -1845,7 +1845,7 @@ div.tab_container h2 {
   width: 100%;
   height: 0;
   padding-bottom: 52.08333%;
-  background: url('../images/bg-about-row4.jpg?1438220151') 50% 50% no-repeat;
+  background: url('../images/bg-about-row4.jpg?1438334581') 50% 50% no-repeat;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -1858,7 +1858,7 @@ div.tab_container h2 {
   width: 100%;
   height: 0;
   padding-bottom: 19.16667%;
-  background: url('../images/aboutCPCS-row2-barbg.jpg?1438220192') 50% 50% no-repeat;
+  background: url('../images/aboutCPCS-row2-barbg.jpg?1438334622') 50% 50% no-repeat;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -1875,7 +1875,7 @@ div.tab_container h2 {
   z-index: 0;
   width: 100%;
   height: 95px;
-  background: url('../images/bg-about-row4.jpg?1438220151') 50% 50% no-repeat;
+  background: url('../images/bg-about-row4.jpg?1438334581') 50% 50% no-repeat;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -1889,7 +1889,7 @@ div.tab_container h2 {
   width: 100%;
   height: 0;
   padding-bottom: 52.08333%;
-  background: url('../images/bg-about-row4.jpg?1438220151') 50% 50% no-repeat;
+  background: url('../images/bg-about-row4.jpg?1438334581') 50% 50% no-repeat;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -1948,7 +1948,7 @@ div.tab_container h2 {
   width: 100%;
   height: 0;
   padding-bottom: 52.08333%;
-  background: url('../images/bg-about-row4.jpg?1438220151') 50% 50% no-repeat;
+  background: url('../images/bg-about-row4.jpg?1438334581') 50% 50% no-repeat;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -1969,7 +1969,7 @@ div.tab_container h2 {
   z-index: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/bg-about-row4.jpg?1438220151') 0 0 no-repeat;
+  background: url('../images/bg-about-row4.jpg?1438334581') 0 0 no-repeat;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -2117,7 +2117,7 @@ header.chatroom {
   z-index: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/bg-about-row4.jpg?1438220151') 0 0 no-repeat;
+  background: url('../images/bg-about-row4.jpg?1438334581') 0 0 no-repeat;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -2368,7 +2368,7 @@ header.chatroom {
   margin: auto;
   width: 57px;
   height: 57px;
-  background: url('../images/iconTxt.png?1438220084') -31px 0px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -31px 0px no-repeat;
   transition: all 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
@@ -2591,7 +2591,7 @@ header.chatroom {
   width: 100%;
   height: 0;
   padding-bottom: 52.08333%;
-  background: url('../images/bg-about-row4.jpg?1438220151') 50% 50% no-repeat;
+  background: url('../images/bg-about-row4.jpg?1438334581') 50% 50% no-repeat;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -2629,7 +2629,7 @@ header.chatroom {
   z-index: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/bg-about-row4.jpg?1438220151') 0 0 no-repeat;
+  background: url('../images/bg-about-row4.jpg?1438334581') 0 0 no-repeat;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -3085,6 +3085,19 @@ header.chatroom {
   -webkit-touch-callout: default;
   -webkit-tap-hightlight-color: rgba(215, 0, 15, 0.5);
 }
+@media screen and (max-width: 480px) {
+  .phone.t {
+    display: none;
+  }
+}
+.phone.m {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .phone.m {
+    display: block;
+  }
+}
 
 .character-item {
   width: 32.5%;
@@ -3310,91 +3323,91 @@ header.chatroom {
 }
 
 .about-character1.character-pic:before {
-  background-position: 82% 49%;
+  background-position: 67% 81%;
 }
 
 .index-character1.character-pic:before {
-  background-position: 95% 86%;
+  background-position: 94% 83%;
 }
 
 .about-character2.character-pic:before {
-  background-position: 23% 11%;
+  background-position: 65% 19%;
 }
 
 .index-character2.character-pic:before {
-  background-position: 29% 33%;
+  background-position: 61% 68%;
 }
 
 .about-character3.character-pic:before {
-  background-position: 29% 58%;
+  background-position: 31% 83%;
 }
 
 .index-character3.character-pic:before {
-  background-position: 24% 7%;
+  background-position: 4% 80%;
 }
 
 .about-character4.character-pic:before {
-  background-position: 31% 90%;
+  background-position: 33% 87%;
 }
 
 .index-character4.character-pic:before {
-  background-position: 65% 8%;
+  background-position: 18% 56%;
 }
 
 .about-character5.character-pic:before {
-  background-position: 28% 62%;
+  background-position: 3% 44%;
 }
 
 .index-character5.character-pic:before {
-  background-position: 70% 57%;
+  background-position: 73% 57%;
 }
 
 .about-character6.character-pic:before {
-  background-position: 35% 64%;
+  background-position: 51% 12%;
 }
 
 .index-character6.character-pic:before {
-  background-position: 49% 39%;
+  background-position: 33% 68%;
 }
 
 .about-character7.character-pic:before {
-  background-position: 95% 55%;
+  background-position: 1% 82%;
 }
 
 .index-character7.character-pic:before {
-  background-position: 37% 63%;
+  background-position: 4% 88%;
 }
 
 .about-character8.character-pic:before {
-  background-position: 39% 74%;
+  background-position: 43% 26%;
 }
 
 .index-character8.character-pic:before {
-  background-position: 72% 3%;
+  background-position: 76% 61%;
 }
 
 .about-character9.character-pic:before {
-  background-position: 22% 95%;
+  background-position: 41% 95%;
 }
 
 .index-character9.character-pic:before {
-  background-position: 66% 62%;
+  background-position: 65% 78%;
 }
 
 .about-character10.character-pic:before {
-  background-position: 22% 62%;
+  background-position: 84% 62%;
 }
 
 .index-character10.character-pic:before {
-  background-position: 75% 41%;
+  background-position: 40% 25%;
 }
 
 .about-character11.character-pic:before {
-  background-position: 49% 52%;
+  background-position: 85% 81%;
 }
 
 .index-character11.character-pic:before {
-  background-position: 14% 60%;
+  background-position: 72% 31%;
 }
 
 .character-pic img {
@@ -3525,7 +3538,7 @@ header.chatroom {
 .futures_bar-bg {
   width: 100%;
   height: 426px;
-  background: url('../images/futures_bar-banner1.jpg?1438220109') 50% 50% no-repeat;
+  background: url('../images/futures_bar-banner1.jpg?1438334540') 50% 50% no-repeat;
 }
 .futures_bar-list {
   height: 255px;
@@ -3586,13 +3599,13 @@ header.chatroom {
   display: block;
 }
 .futures_bar.futuresSec1-active .futures_bar-bg {
-  background: url('../images/futures_bar-banner1.jpg?1438220109') 50% 50% no-repeat;
+  background: url('../images/futures_bar-banner1.jpg?1438334540') 50% 50% no-repeat;
 }
 .futures_bar.futuresSec2-active .futures_bar-bg {
-  background: url('../images/futures_bar-banner2.jpg?1438220103') 50% 50% no-repeat;
+  background: url('../images/futures_bar-banner2.jpg?1438334533') 50% 50% no-repeat;
 }
 .futures_bar.futuresSec3-active .futures_bar-bg {
-  background: url('../images/futures_bar-banner3.jpg?1438220107') 50% 50% no-repeat;
+  background: url('../images/futures_bar-banner3.jpg?1438334537') 50% 50% no-repeat;
 }
 .futures_bar-container {
   position: relative;
@@ -4214,22 +4227,22 @@ header.chatroom {
 .txt_img-goback {
   width: 114px;
   height: 28px;
-  background: url('../images/txts.png?1438219985') -253px -31px no-repeat;
+  background: url('../images/txts.png?1438334414') -253px -31px no-repeat;
 }
 .txt_img-getmore {
   width: 133px;
   height: 29px;
-  background: url('../images/txts.png?1438219985') -97px 0px no-repeat;
+  background: url('../images/txts.png?1438334414') -97px 0px no-repeat;
 }
 .txt_img-BusinessDivisons[data-lang="en"] {
   width: 396px;
   height: 36px;
-  background: url('../images/txts.png?1438219985') 0px -102px no-repeat;
+  background: url('../images/txts.png?1438334414') 0px -102px no-repeat;
 }
 .txt_img-BusinessDivisons[data-lang="tw"] {
   width: 310px;
   height: 33px;
-  background: url('../images/txts.png?1438219985') 0px -139px no-repeat;
+  background: url('../images/txts.png?1438334414') 0px -139px no-repeat;
 }
 .txt_img-BusinessDivisons.mobile_title {
   width: 95%;
@@ -4239,22 +4252,22 @@ header.chatroom {
 .txt_img-morechatroom {
   width: 154px;
   height: 29px;
-  background: url('../images/txts.png?1438219985') -97px -30px no-repeat;
+  background: url('../images/txts.png?1438334414') -97px -30px no-repeat;
 }
 .txt_img-goProdList {
   width: 195px;
   height: 28px;
-  background: url('../images/txts.png?1438219985') -97px -60px no-repeat;
+  background: url('../images/txts.png?1438334414') -97px -60px no-repeat;
 }
 .txt_img-goChatList {
   width: 151px;
   height: 28px;
-  background: url('../images/txts.png?1438219985') -231px 0px no-repeat;
+  background: url('../images/txts.png?1438334414') -231px 0px no-repeat;
 }
 .txt_img-goService {
   width: 134px;
   height: 28px;
-  background: url('../images/txts.png?1438219985') -293px -60px no-repeat;
+  background: url('../images/txts.png?1438334414') -293px -60px no-repeat;
 }
 
 .txt-spec {
@@ -4511,37 +4524,37 @@ button.icon {
 .icon-rss {
   width: 40px;
   height: 40px;
-  background: url('../images/iconTxt.png?1438220084') -89px 0px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -89px 0px no-repeat;
 }
 .icon-fasebook {
   width: 40px;
   height: 40px;
-  background: url('../images/iconTxt.png?1438220084') -89px -41px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -89px -41px no-repeat;
 }
 .icon-googleplus {
   width: 40px;
   height: 40px;
-  background: url('../images/iconTxt.png?1438220084') -89px -82px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -89px -82px no-repeat;
 }
 .icon-twitter {
   width: 40px;
   height: 40px;
-  background: url('../images/iconTxt.png?1438220084') -89px -123px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -89px -123px no-repeat;
 }
 .icon-in {
   width: 40px;
   height: 40px;
-  background: url('../images/iconTxt.png?1438220084') -89px -164px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -89px -164px no-repeat;
 }
 .icon-pinterest {
   width: 40px;
   height: 40px;
-  background: url('../images/iconTxt.png?1438220084') -89px -205px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -89px -205px no-repeat;
 }
 .icon-service {
   width: 70px;
   height: 65px;
-  background: url('../images/iconTxt.png?1438220084') -130px -69px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -130px -69px no-repeat;
   background-color: #d7000f;
 }
 .icon-service:hover {
@@ -4550,13 +4563,13 @@ button.icon {
 .icon-phone {
   width: 70px;
   height: 65px;
-  background: url('../images/iconTxt.png?1438220084') -130px -135px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -130px -135px no-repeat;
   background-color: #d7000f;
 }
 .icon-like {
   width: 70px;
   height: 65px;
-  background: url('../images/iconTxt.png?1438220084') -130px -201px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -130px -201px no-repeat;
   background-color: #d7000f;
 }
 .icon-like:hover {
@@ -4566,25 +4579,25 @@ button.icon {
   display: inline-block;
   width: 73px;
   height: 14px;
-  background: url('../images/iconTxt.png?1438220084') -203px 0px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -203px 0px no-repeat;
 }
 .icon-futures {
   display: block;
   width: 72px;
   height: 68px;
-  background: url('../images/iconTxt.png?1438220084') -130px 0px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -130px 0px no-repeat;
 }
 .icon-download {
   display: block;
   width: 45px;
   height: 53px;
-  background: url('../images/iconTxt.png?1438220084') -31px -124px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -31px -124px no-repeat;
 }
 .icon-sales {
   display: block;
   width: 46px;
   height: 54px;
-  background: url('../images/iconTxt.png?1438220084') -31px -178px no-repeat;
+  background: url('../images/iconTxt.png?1438334514') -31px -178px no-repeat;
 }
 
 /*# sourceMappingURL=style.css.map */

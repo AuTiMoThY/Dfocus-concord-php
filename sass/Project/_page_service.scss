@@ -487,5 +487,16 @@
 		// 	display: block;
 		// }
 	}
+	&.t {
+		@include respondTo(m) {
+			display: none;
+		};
+	}
+	&.m {
+		display: none;
+		@include respondTo(m) {
+			display: block;
+		};
+	}
 }
 

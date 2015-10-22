@@ -139,7 +139,8 @@
 											<span class="txt-1"><?=str_replace( '年', ' / ', $d->group_name )?> / <?=month_name($d->month)?></span>
 										</div>
 										<div class="news-link">
-											<a href="<?=$d->link?>" class="txt-r1"><?=$d->link?></a>
+										<a href="<?=$d->link?>" class="btn btn-goComputer txt-1 link-2" style="width:70px;" target="_blank">查看</a>
+											<!-- <a href="<?//=$d->link?>" class="txt-r1"><?//=$d->link?></a> -->
 										</div>
 									</div>
 								</li>

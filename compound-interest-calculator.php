@@ -30,25 +30,24 @@
 
 <?php
 //app
-  include_once INC_PATH.'header.php';
+  // include_once INC_PATH.'header.php';
  ?>
-<div id="bannerTrigger"></div>
-<section id="pageBanner" class="banner" style="background-image: url('<?php path_au('img'); ?>banner-aboutCPCS.jpg')">
+<!-- <div id="bannerTrigger"></div>
+<section id="pageBanner" class="banner" style="background-image: url('<?php //path_au('img'); ?>banner-aboutCPCS.jpg')">
 	
-</section>
+</section> -->
 
 <main class="">
-	<section class="row1">
+<!-- 	<section class="row1">
 		<div class="wrapper small">
 			<hgroup>
-				<!-- <h1 class="pdt-title txt-3 text-center">Futures Fund</h1> -->
 				<h2 class="pdt-subtitle txt-4 text-center">複利計算機</h2>
 			</hgroup>
 		</div>
-	</section>
+	</section> -->
 	<section class="">
 		<div class="wrapper">
-<div>
+<div id="calculatestuff">
   <iframe src="http://widgets.calculatestuff.com/?token=f5ba8ec41415" frameborder="0" width="100%" height="500" scrolling="no" style="border:none;" id="f5ba8ec41415"></iframe>
   <script type="text/javascript">
     (function() {
@@ -63,18 +62,18 @@
 		</div>
 	</section>
 
-	<section id="" class="fullbg row4">
+<!-- 	<section id="" class="fullbg row4">
 		<div class="bg"></div>
 		<div class="wrapper">
 			<a href="javascript:history.go(-1);" class="btn btn-goback2 link-2 txt-1">回上一頁</a>
 		</div>
-	</section>
+	</section> -->
 
 </main>
 
 <?php
 //app
-  include_once INC_PATH.'footer.php';
+  // include_once INC_PATH.'footer.php';
  ?>
 
 <?php
